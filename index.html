@@ -347,65 +347,57 @@ Result pages are not indexed for discovery, but anyone with the link may view th
 
         <hr />
 
-        <section id="interest">
-            <h2>Register interest</h2>
-            <p class="muted">Email is required. Everything else is optional.</p>
-
-            <form method="post" action="REPLACE_WITH_YOUR_FORM_ENDPOINT">
-                <div class="form-card">
-                    <div class="field">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" required autocomplete="email"
-                            placeholder="you@example.com" />
-                    </div>
-
-                    <div class="field">
-                        <label>Subjects of interest (optional)</label>
-                        <div class="grid-checks">
-                            <label><input type="checkbox" name="subjects[]" value="Linear Algebra" /> Linear
-                                Algebra</label>
-                            <label><input type="checkbox" name="subjects[]" value="Algorithms and Data Structures" /> Algorithms and Data Structures
-                               </label>
-                            <label><input type="checkbox" name="subjects[]" value="Probability" />
-                                Probability</label>
-                            <label><input type="checkbox" name="subjects[]" value="Discrete Mathematics" /> Discrete
-                                Mathematics</label>
-                            <label><input type="checkbox" name="subjects[]" value="Real Analysis" /> Real
-                                Analysis</label>
-                            <label><input type="checkbox" name="subjects[]" value="Abstract Algebra" />
-                                Abstract Algebra</label>
-                            <label><input type="checkbox" name="subjects[]" value="Theory of Computation" /> Theory of
-                                Computation</label>
-                            <label><input type="checkbox" name="subjects[]" value="Other" /> Other (please specify
-                                below)</label>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <label for="locations">Preferred testing location (optional)</label>
-                        <input id="locations" name="locations" type="text"
-                            placeholder="e.g., New York, Boston, San Francisco" />
-                    </div>
-
-                    <div class="field">
-                        <label for="notes">Notes or feedback (optional)</label>
-                        <textarea id="notes" name="notes"
-                            placeholder="Background, preferred subjects not listed, concerns about format, etc."></textarea>
-                    </div>
-
-                    <!-- Optional basic spam trap (hidden) -->
-                    <div class="field" style="display:none;">
-                        <label for="company">Company</label>
-                        <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
-                    </div>
-
-                    <div class="actions">
-                        <button type="submit">Join mailing list</button>
-                        <span class="fineprint">You may unsubscribe at any time.</span>
+        <form name="interest" method="POST" data-netlify="true" data-netlify-honeypot="company" action="/thanks/">
+            <!-- Required for Netlify to identify the form -->
+            <input type="hidden" name="form-name" value="interest" />
+        
+            <div class="form-card">
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" />
+                </div>
+        
+                <div class="field">
+                    <label>Subjects of interest (optional)</label>
+                    <div class="grid-checks">
+                        <label><input type="checkbox" name="subjects" value="Linear Algebra" /> Linear Algebra</label>
+                        <label><input type="checkbox" name="subjects" value="Algorithms and Data Structures" /> Algorithms and
+                            Data Structures</label>
+                        <label><input type="checkbox" name="subjects" value="Probability" /> Probability</label>
+                        <label><input type="checkbox" name="subjects" value="Discrete Mathematics" /> Discrete
+                            Mathematics</label>
+                        <label><input type="checkbox" name="subjects" value="Real Analysis" /> Real Analysis</label>
+                        <label><input type="checkbox" name="subjects" value="Abstract Algebra" /> Abstract Algebra</label>
+                        <label><input type="checkbox" name="subjects" value="Theory of Computation" /> Theory of
+                            Computation</label>
+                        <label><input type="checkbox" name="subjects" value="Other" /> Other (please specify below)</label>
                     </div>
                 </div>
-            </form>
-        </section>
+        
+                <div class="field">
+                    <label for="locations">Preferred testing location (optional)</label>
+                    <input id="locations" name="locations" type="text" placeholder="e.g., New York, Boston, San Francisco" />
+                </div>
+        
+                <div class="field">
+                    <label for="notes">Notes or feedback (optional)</label>
+                    <textarea id="notes" name="notes"
+                        placeholder="Background, preferred subjects not listed, concerns about format, etc."></textarea>
+                </div>
+        
+                <!-- Honeypot field (Netlify will treat filled values as spam) -->
+                <div class="field" style="display:none;">
+                    <label for="company">Company</label>
+                    <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
+                </div>
+        
+                <div class="actions">
+                    <button type="submit">Join mailing list</button>
+                    <span class="fineprint">You may unsubscribe at any time.</span>
+                </div>
+            </div>
+        </form>
+
 
         <footer>
             <p class="fineprint" style="margin: 0;">
