@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Domain Exams — independent examinations assessing mastery of undergraduate subject material." />
+    <title>Domain Exams</title>
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #111111;
+            --muted: #555555;
+            --hairline: #e6e6e6;
+            --focus: #1a73e8;
+            --maxw: 760px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 18px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 56px 20px 72px;
+        }
+
+        header {
+            margin-bottom: 18px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 30px;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            margin: 12px 0 0;
+            max-width: 68ch;
+        }
+
+        h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            font-weight: 650;
+        }
+
+        p {
+            margin: 10px 0;
+            max-width: 68ch;
+        }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 20px;
+            max-width: 72ch;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+
+        section {
+            margin-top: 30px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--hairline);
+            margin: 28px 0;
+        }
+
+        /* Form styling */
+        form {
+            margin-top: 12px;
+        }
+
+        .form-card {
+            border: 1px solid var(--hairline);
+            border-radius: 12px;
+            padding: 22px 18px;
+            background: #fcfcfc;
+        }
+
+        @media (min-width: 720px) {
+            .form-card {
+                padding: 26px 22px;
+            }
+        }
+
+        .field {
+            margin: 18px 0;
+        }
+
+        .field:first-child {
+            margin-top: 0;
+        }
+
+        .field:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        input[type="email"],
+        input[type="text"],
+        textarea {
+            width: 100%;
+            font-size: 16px;
+            padding: 10px 12px;
+            border: 1px solid var(--hairline);
+            border-radius: 8px;
+            font-family: inherit;
+            background: #ffffff;
+            color: var(--text);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--focus);
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+        }
+
+        /* Compact checkbox list (unboxed, academic) */
+        .grid-checks {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px 24px;
+            padding-top: 4px;
+        }
+
+        @media (min-width: 720px) {
+            .grid-checks {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .grid-checks label {
+            font-weight: 400;
+            margin: 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.45;
+            cursor: pointer;
+        }
+
+        .grid-checks input[type="checkbox"] {
+            width: auto;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 10px 14px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid var(--hairline);
+        }
+
+        button {
+            background: var(--text);
+            color: var(--bg);
+            border: 1px solid var(--text);
+            border-radius: 10px;
+            padding: 9px 12px;
+            font-weight: 650;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.92;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 18px;
+            border-top: 1px solid var(--hairline);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header id="top">
+            <div class="brand">
+                <h1>Domain Exams</h1>
+            </div>
+            <p class="tagline">
+                Independent examinations assessing mastery of undergraduate subject material.
+                Written, proof-oriented when appropriate, and evaluated by human examiners.
+            </p>
+        </header>
+
+        <section id="what-it-is">
+            <p>
+                Pending interest and feedback, initial examinations will focus on a small number of undergraduate subjects
+                in mathematics and theoretical computer science, such as linear algebra, probability theory, discrete mathematics, or
+                algorithms. Initial offerings will be limited in scope and designed to assess depth of understanding rather than
+                breadth, with examinations offered only where a sufficient number of candidates are interested.
+            </p>
+
+        </section>
+
+        <hr />
+
+        <section id="overview" >
+                <h2>What this is</h2>
+                <ul>
+                    <li>A set of rigorous examinations in specific domains.</li>
+                    <li>Designed to measure understanding, not rote memorization.</li>
+                    <li>Results intended for personal validation and external reference.</li>
+                </ul>
+        </section>
+
+        <hr />
+
+        <section id="why">
+            <h2>Why you might be interested</h2>
+            <ul>
+                <li>
+                    To demonstrate that your understanding of a subject meets the level expected
+                    of a honors-level undergraduate course.
+                </li>
+                <li>
+                    To give yourself a clear, external objective for self-study, rather than relying on
+                    completion of textbooks or online materials.
+                </li>
+                <li>
+                    To obtain an independent assessment of your understanding, separate from grades,
+                    transcripts, or internal course evaluations.
+                </li>
+                <li>
+                    To test whether you can solve unfamiliar problems under exam conditions, not merely
+                    reproduce familiar arguments.
+                </li>
+                <li>
+                    To have a durable, verifiable record of your knowledge of a subject.
+                </li>
+            </ul>
+        </section>
+
+        <hr />
+
+        <section id="what-you-get">
+            <h2>What you receive</h2>
+            <ul>
+                <li>
+                    A printed certificate of result for outcomes of <strong>Mastery</strong> or
+                    <strong>Proficiency</strong>.
+                </li>
+                <li>
+                    A public result page under an opaque, unguessable URL, which you may share at your
+                    discretion.
+Result pages are not indexed for discovery, but anyone with the link may view them.
+                </li>
+            </ul>
+        </section>
+
+        <hr />
+
+        <section id="results">
+            <h2>How results are reported</h2>
+            <p class="muted">
+                Examinations are evaluated by human examiners. Results are reported using a small set of
+                qualitative outcome categories rather than numeric scores.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Mastery</strong> — Demonstrates a level of understanding fully consistent with
+                    the intended undergraduate standard. Reasoning is correct, coherent, and robust across
+                    problems.
+                </li>
+                <li>
+                    <strong>Proficiency</strong> — Demonstrates solid understanding of core material, with
+                    generally correct approaches but with notable gaps, errors, or uneven depth.
+                </li>
+                <li>
+                    <strong>Partial</strong> — Demonstrates familiarity with some concepts, but lacks the
+                    consistency, completeness, or rigor expected at the target level.
+                </li>
+                <li>
+                    <strong>Insufficient</strong> — Does not demonstrate understanding at the target
+                    undergraduate level.
+                </li>
+            </ul>
+
+            <p>
+                Results are not rank-ordered and do not correspond to percentages or percentiles. Many
+                candidates should expect not to receive a result of Mastery.
+            </p>
+        </section>
+
+        <hr />
+
+        <section id="why-this-exists">
+            <h2>Why this exists</h2>
+            <p>
+                I began studying abstract algebra to better understand modern cryptography and zero-knowledge proofs. I spent evenings
+                working through a standard undergraduate text and its exercises, but found it difficult to stay motivated without a
+                clear measure of achievement. I looked for a standardized subject examination that could provide an objective benchmark
+                but could not find one. Domain Exams grew out of that experience.
+            </p>
+        </section>
+
+        <hr />
+
+        <section id="interest">
+            <h2>Register interest</h2>
+            <p class="muted">Email is required. Everything else is optional.</p>
+
+            <form method="post" action="REPLACE_WITH_YOUR_FORM_ENDPOINT">
+                <div class="form-card">
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required autocomplete="email"
+                            placeholder="you@example.com" />
+                    </div>
+
+                    <div class="field">
+                        <label>Subjects of interest (optional)</label>
+                        <div class="grid-checks">
+                            <label><input type="checkbox" name="subjects[]" value="Linear Algebra" /> Linear
+                                Algebra</label>
+                            <label><input type="checkbox" name="subjects[]" value="Algorithms" /> Algorithms
+                               </label>
+                            <label><input type="checkbox" name="subjects[]" value="Probability" />
+                                Probability</label>
+                            <label><input type="checkbox" name="subjects[]" value="Discrete Mathematics" /> Discrete
+                                Mathematics</label>
+                            <label><input type="checkbox" name="subjects[]" value="Real Analysis" /> Real
+                                Analysis</label>
+                            <label><input type="checkbox" name="subjects[]" value="Abstract Algebra" />
+                                Abstract Algebra</label>
+                            <label><input type="checkbox" name="subjects[]" value="Theory of Computation" /> Theory of
+                                Computation</label>
+                            <label><input type="checkbox" name="subjects[]" value="Other" /> Other (please specify
+                                below)</label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="locations">Preferred testing location (optional)</label>
+                        <input id="locations" name="locations" type="text"
+                            placeholder="e.g., New York, Boston, San Francisco" />
+                    </div>
+
+                    <div class="field">
+                        <label for="notes">Notes or feedback (optional)</label>
+                        <textarea id="notes" name="notes"
+                            placeholder="Background, preferred subjects not listed, concerns about format, etc."></textarea>
+                    </div>
+
+                    <!-- Optional basic spam trap (hidden) -->
+                    <div class="field" style="display:none;">
+                        <label for="company">Company</label>
+                        <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit">Join mailing list</button>
+                        <span class="fineprint">You may unsubscribe at any time.</span>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <footer>
+            <p class="fineprint" style="margin: 0;">
+                Contact: <a href="mailto:hello@domainexams.com">hello@domainexams.com</a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
