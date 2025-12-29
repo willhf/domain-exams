@@ -108,6 +108,7 @@
             border-radius: 12px;
             padding: 22px 18px;
             background: var(--surface);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
         @media (min-width: 720px) {
@@ -160,39 +161,41 @@
         }
 
         /* Compact checkbox list (unboxed, academic) */
-        .grid-checks input[type="checkbox"] {
-            width: auto;
-            margin-top: 3px;
-            flex-shrink: 0;
-        }
-        @media (min-width: 720px) {
-            .grid-checks {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
+.grid-checks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px 24px;
+    padding-top: 6px;
+}
 
-        .grid-checks label {
-            font-weight: 400;
-            margin: 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            line-height: 1.45;
-            cursor: pointer;
-        }
+@media (min-width: 720px) {
+    .grid-checks {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
-        .grid-checks input[type="checkbox"] {
-            margin-top: 3px;
-            flex-shrink: 0;
-        }
+.grid-checks label {
+    font-weight: 400;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.45;
+    cursor: pointer;
+}
+
+.grid-checks input[type="checkbox"] {
+    width: auto;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
 
         .actions {
             display: flex;
             align-items: center;
             gap: 10px 14px;
             flex-wrap: wrap;
-            margin-top: 5px;
-            padding-top: 5px;
+            margin-top: 20px;
         }
 
         button {
@@ -233,11 +236,10 @@
 
         <section id="overview">
             <p>
-                Domain Exams offers independent examinations that assess mastery of undergraduate
-                subject material. Examinations are written and proof-oriented where appropriate.
+                Domain Exams offers independent examinations that assess mastery of undergraduate-level subjects. Examinations are written and proof-oriented where appropriate.
             </p>
             <p>
-                Initial examinations focus on a small number of subjects in mathematics and
+                Initial offerings focus on a small number of subjects in mathematics and
                 theoretical computer science, such as linear algebra, probability, discrete
                 mathematics, or algorithms. Offerings are deliberately limited in scope and
                 emphasize depth of understanding rather than breadth.
@@ -353,7 +355,7 @@
 
         <section id="register-interest">
             <h2>Register interest</h2>
-            <p class="muted">Email is required. Everything else is optional.</p>
+            <p>We are collecting interest to set initial subjects and locations. Email is required. Everything else is optional.</p>
 
             <form name="interest" method="POST" data-netlify="true" data-netlify-honeypot="company" action="/thanks/">
                 <input type="hidden" name="form-name" value="interest" />
