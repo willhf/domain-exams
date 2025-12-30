@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-        content="Domain Exams — independent examinations assessing mastery of undergraduate subject material." />
+        content="Domain Exams — independent, proof-based examinations assessing mastery of undergraduate subject material." />
     <title>Domain Exams</title>
 
     <style>
@@ -48,11 +48,11 @@
         }
 
         header {
-            margin-bottom: 22px;
+            margin-bottom: 34px;
         }
 
         h1 {
-            margin: 0 0 56px;
+            margin: 0 0 18px;
             font-size: clamp(48px, 8vw, 100px);
             font-weight: 700;
             letter-spacing: -0.025em;
@@ -87,16 +87,6 @@
             margin-top: 32px;
         }
 
-        section:first-of-type {
-            margin-top: 0;
-        }
-
-        hr {
-            border: 0;
-            border-top: 1px solid var(--hairline);
-            margin: 30px 0;
-        }
-
         /* Form styling */
         form {
             margin-top: 12px;
@@ -111,10 +101,9 @@
         }
 
         @media (min-width: 720px) {
-            .form-card {
-                padding: 26px 22px;
-            }
-        }
+  .form-card { padding: 26px 22px; }
+  .grid-checks { grid-template-columns: 1fr 1fr; }
+}
 
         .field {
             margin: 18px 0;
@@ -159,43 +148,30 @@
             box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
         }
 
-        /* Compact checkbox list (unboxed, academic) */
-.grid-checks {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 4px 24px;
-    padding-top: 6px;
-}
-
-@media (min-width: 720px) {
-    .grid-checks {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-.grid-checks label {
-    font-weight: 400;
-    margin: 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.45;
-    cursor: pointer;
-}
-
-.grid-checks input[type="checkbox"] {
-    width: auto;
-    margin-top: 3px;
-    flex-shrink: 0;
-}
-
-        .actions {
-            display: flex;
-            align-items: center;
-            gap: 10px 14px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+        .grid-checks {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4px 24px;
+            padding-top: 6px;
         }
+
+        .grid-checks label {
+            font-weight: 400;
+            margin: 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.45;
+            cursor: pointer;
+        }
+
+        .grid-checks input[type="checkbox"] {
+            width: auto;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .actions { margin-top: 20px; }
 
         button {
             background: var(--text);
@@ -214,16 +190,12 @@
         footer {
             margin-top: 44px;
             padding-top: 18px;
-            border-top: 1px solid var(--hairline);
         }
 
-        /* A11y: respect reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                scroll-behavior: auto !important;
-                transition: none !important;
-            }
-        }
+.hero-cta { margin: 14px 0 0; font-weight: 600; }
+
+.cta-note { font-weight: 400; color: #444; }
+
     </style>
 </head>
 
@@ -231,131 +203,83 @@
     <div class="wrap">
         <header>
             <h1>Domain Exams</h1>
+
+            <p>
+                Proof-based examinations to demonstrate undergraduate-level mastery in mathematics and
+                theoretical computer science — without enrolling in a degree program.
+            </p>
+
+<p class="hero-cta">
+    <a href="#register-interest">Join the early access list</a> <span class="cta-note">(email only, no
+        obligation)</span>.
+</p>
         </header>
 
-        <section id="overview">
-            <p>
-                Domain Exams offers independent examinations that assess mastery of undergraduate-level subjects.
-                Examinations are written and proof-oriented where appropriate.
-            </p>
-            <p>
-                Initial offerings focus on a small number of subjects in mathematics and
-                theoretical computer science, such as linear algebra, probability, discrete
-                mathematics, or algorithms. Offerings are deliberately limited in scope and
-                emphasize depth of understanding rather than breadth.
-            </p>
-            <p>
-                Examinations prioritize reasoning, justification, and the ability to apply ideas
-                in unfamiliar contexts. They are defined by explicit scope and standards rather
-                than relative performance among candidates, and are intended to distinguish
-                genuine understanding from success on rehearsed problems.
-            </p>
-            <p>The first examinations will be held in fall 2026 (dates and locations TBD).</p>
+        <section id="who-for">
+            <h2>Who this is for</h2>
+<ul>
+    <li>Self-taught or nontraditional learners seeking a credible external benchmark.</li>
+    <li>Job candidates who want an independent signal of rigorous reasoning ability.</li>
+    <li>Professionals seeking independent validation of academic-level understanding.</li>
+</ul>
         </section>
-
-        <hr />
-
-        <section id="what-this-is">
-            <h2>What this is</h2>
-            <ul>
-                <li>A set of written examinations in clearly defined subjects.</li>
-                <li>Designed to measure understanding, not rote memorization.</li>
-                <li>Results intended for personal validation and external reference.</li>
-            </ul>
-        </section>
-
-        <hr />
 
         <section id="why">
             <h2>Why you might be interested</h2>
             <ul>
                 <li>
-                    To demonstrate that your understanding meets the level expected of an
-                    honors-level undergraduate course.
+                    Demonstrate that your understanding meets honors-level undergraduate standards.
                 </li>
                 <li>
-                    To give your self-study a clear external objective, rather than relying on
-                    informal completion of materials.
+                    Give your self-study a clear external objective.
                 </li>
                 <li>
-                    To obtain a durable, independent record of having demonstrated your knowledge
-                    of a subject.
+                    Obtain a durable, independent record of having proven your knowledge.
                 </li>
             </ul>
         </section>
 
-        <hr />
+        <section id="about">
+            <h2>What Domain Exams are</h2>
+        
+<p>
+    Domain Exams are independent, written examinations designed to assess mastery of undergraduate-level subjects,
+    especially in mathematics and theoretical computer science. Exams emphasize correct reasoning and proof-based
+    justification where appropriate, with clearly defined scope and standards.
+</p>
+
+<ul>
+    <li>Written and proof-based — not multiple choice.</li>
+    <li>Standards, not ranking — results reflect absolute performance, not relative to others.</li>
+    <li>Depth over breadth — narrow in scope.</li>
+    <li>Reasoning-first — emphasizes understanding over memorization.</li>
+</ul>
+
+<p>
+    Initial subjects may include linear algebra, probability, discrete mathematics, and algorithms.
+</p>
+<p>
+    Detailed exam scopes and standards will be published prior to launch.
+</p>
+        </section>
+
 
         <section id="what-you-get">
             <h2>What you receive</h2>
-            <ul>
-                <li>
-                    A printed certificate of result for outcomes of <strong>Mastery</strong> or
-                    <strong>Proficiency</strong>.
-                </li>
-                <li>
-                    A public result page under an opaque, unguessable URL, which you may share at
-                    your discretion. Result pages are not indexed for discovery, but anyone with
-                    the link may view them.
-                </li>
-            </ul>
+<ul>
+    <li>A result reported as one of: <strong>Mastery</strong>, <strong>Proficiency</strong>, <strong>Partial</strong>,
+        or <strong>Insufficient</strong> (standards-based, not rank-ordered).</li>
+    <li>A printed certificate for outcomes of <strong>Mastery</strong> or <strong>Proficiency</strong>.</li>
+    <li>A shareable result page under an opaque, unguessable URL (not indexed for discovery).</li>
+</ul>
         </section>
-
-        <hr />
-
-        <section id="results">
-            <h2>How results are reported</h2>
-            <p>
-                Results are reported using a small set of qualitative outcome categories rather
-                than numeric scores.
-            </p>
-
-            <ul>
-                <li>
-                    <strong>Mastery</strong> — Demonstrates a level of understanding consistent
-                    with the intended undergraduate standard. Reasoning is correct, coherent, and
-                    robust across problems.
-                </li>
-                <li>
-                    <strong>Proficiency</strong> — Demonstrates solid understanding of core
-                    material, with generally correct approaches but with some gaps, errors, or
-                    uneven depth.
-                </li>
-                <li>
-                    <strong>Partial</strong> — Demonstrates familiarity with some concepts, but
-                    lacks the consistency, completeness, or rigor expected at the target level.
-                </li>
-                <li>
-                    <strong>Insufficient</strong> — Does not demonstrate understanding at the
-                    target undergraduate level.
-                </li>
-            </ul>
-
-            <p>
-                Results are not rank-ordered and do not correspond to percentages or percentiles.
-                Many candidates should expect not to receive a result of Mastery.
-            </p>
-        </section>
-
-        <hr />
-
-        <section id="why-this-exists">
-            <h2>Why this exists</h2>
-            <p>
-                I began studying abstract algebra to better understand modern cryptography and
-                zero-knowledge proofs. I spent evenings working through a standard undergraduate
-                text and its exercises, but found it difficult to stay motivated without a clear
-                measure of achievement. I looked for a standardized subject examination that
-                could provide an objective benchmark but could not find one. Domain Exams grew
-                out of that experience.
-            </p>
-        </section>
-
-        <hr />
 
         <section id="register-interest">
-            <h2>Register interest</h2>
-            <p>We are collecting interest to set initial subjects and locations. Email is required. Everything else is optional.</p>
+            <h2>Join the early access list</h2>
+        <p>
+            Be notified when the first exams open. Email is required; everything else is optional. No obligation.
+            First exams are planned for fall 2026 (dates and locations TBD).
+        </p>
 
             <form name="interest" method="POST" data-netlify="true" data-netlify-honeypot="company" action="/thanks/">
                 <input type="hidden" name="form-name" value="interest" />
@@ -399,17 +323,24 @@
                             placeholder="Preferred subjects not listed, questions about format or material, etc."></textarea>
                     </div>
 
-                    <!-- Honeypot field (Netlify will treat filled values as spam) -->
                     <div class="field" style="display:none;">
                         <label for="company">Company</label>
                         <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
                     </div>
 
                     <div class="actions">
-                        <button type="submit">Register interest</button>
+                        <button type="submit">Join early access</button>
                     </div>
                 </div>
             </form>
+        </section>
+
+        <section id="why-this-exists">
+            <h2>Why this exists</h2>
+            <p>
+While studying undergraduate mathematics independently, I found there was no clear, widely recognized way to
+demonstrate understanding outside of a formal degree program. Domain Exams was created to address that gap.
+            </p>
         </section>
 
         <footer>
@@ -419,5 +350,4 @@
         </footer>
     </div>
 </body>
-
 </html>
