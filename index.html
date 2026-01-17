@@ -17,6 +17,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
         content="Domain Exams — independent, proof-based examinations assessing mastery of undergraduate subject material." />
+        <meta property="og:title" content="Domain Exams" />
+        <meta property="og:description" content="Independent, proof-based exams for serious self-study in math and CS." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://domainexams.com/" />
+        <meta name="twitter:card" content="summary" />
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
@@ -333,6 +338,22 @@ mask-image: linear-gradient(to left,
   .page::before,
   .page::after { display: none; }
 }
+
+.vision-quote {
+  margin: 14px 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--hairline);
+  max-width: var(--text-width);
+}
+
+.vision-quote p {
+  margin: 0;
+}
+
+.vision-quote footer {
+  margin-top: 0px;
+}
+
     </style>
 </head>
 
@@ -343,18 +364,39 @@ mask-image: linear-gradient(to left,
         <header>
             <h1>Domain Exams</h1>
             <p><strong>Independent, proof-based exams for serious self-study in math and CS.</strong></p>
-<p>Self-study is hard to validate. Domain Exams fixes that.
-</p>
-<p>
-Earn credible, standards-based results in undergraduate mathematics and theoretical computer science — without enrolling in a degree program.
-</p>
 
 <p class="hero-cta">
-    <a href="#register-interest">Help choose the first exam</a>
-    <span class="cta-note">Tell us which subject you’d take first.</span>
+<a href="#register-interest">Choose your first exam</a>
+<span class="cta-note">Register interest in your preferred subject.</span>
 </p>
     
         </header>
+        <section id="vision">
+            <h2>The Vision</h2>
+<blockquote class="vision-quote">
+    <p>
+        "Free education is abundant, all over the Internet. It's the desire to learn that's scarce."
+    </p>
+    <footer>— Naval Ravikant</footer>
+</blockquote>
+        <p>
+Textbooks are cheap, online courses are everywhere, and AI tutors are widely available.
+Access to learning is no longer the bottleneck.
+        </p>
+        <p>
+        What's missing is validation.
+        </p>
+        <p>
+        There is no widely recognized way to demonstrate mastery of a subject—no matter how deeply or seriously it was studied.
+        </p>
+        <p>
+        Domain Exams fixes that.
+        </p>
+        <p>
+        We envision a world where anyone with the discipline to master a subject independently can earn a durable, credible
+        signal of that achievement.
+        </p>
+        </section>
 
         <section id="about">
             <h2>What Domain Exams Are</h2>
@@ -373,26 +415,17 @@ scope and standards.
 </ul>
 
 <p>
-      Potential subjects include Linear Algebra, Algorithms and Data Structures, Probability, Discrete Mathematics, and Theory of Computation.
+      Subjects will include Linear Algebra, Algorithms and Data Structures, Probability, Discrete Mathematics, Theory of Computation, and others.
     Detailed exam scopes and standards will be published prior to launch.
-    <a href="#register-interest">Choose the first exam you would like to take</a>.
 </p>
         </section>
 
-
-
         <section id="why">
-            <h2>Reasons to Participate</h2>
+            <h2>Why Participate</h2>
             <ul>
-                <li>
-                    Show that your understanding meets honors-level undergraduate standards.
-                </li>
-                <li>
-                    Give your self-study a clear external objective and endpoint.
-                </li>
-                <li>
-                    Obtain a durable, independent record of subject mastery.
-                </li>
+                <li>Demonstrate honors-level undergraduate understanding.</li>
+                <li>Turn self-study into a clear, external objective.</li>
+                <li>Earn an independent, durable signal of mastery.</li>
             </ul>
         </section>
 
@@ -402,7 +435,7 @@ scope and standards.
     <li>A result of <strong>Mastery</strong>, <strong>Proficiency</strong>, <strong>Partial</strong>,
         or <strong>Insufficient</strong>.</li>
     <li>A printed certificate for outcomes of <strong>Mastery</strong> or <strong>Proficiency</strong>.</li>
-    <li>A shareable result page under an opaque, unguessable URL (not indexed).</li>
+    <li>A shareable result page under an unguessable URL (not indexed).</li>
 </ul>
         </section>
 
@@ -411,7 +444,7 @@ scope and standards.
     <h2>Choose Your First Exam</h2>
     <p>
 Select your preferred exam subject. Your choice helps determine which exam launches first.
-The first exam is planned for June 2026. Email and subject selection are required; all other fields are optional.
+Email and subject selection are required; all other fields are optional.
     </p>
 <form name="interest" method="POST" data-netlify="true" data-netlify-honeypot="company" action="/thanks/">
     <input type="hidden" name="form-name" value="interest" />
@@ -444,6 +477,14 @@ The first exam is planned for June 2026. Email and subject selection are require
                 <label>
                     <input type="radio" name="subject" value="Theory of Computation" />
                     Theory of Computation
+                </label>
+                <label>
+                    <input type="radio" name="subject" value="Abstract Algebra" />
+                    Abstract Algebra
+                </label>
+                <label>
+                    <input type="radio" name="subject" value="Real Analysis" />
+                    Real Analysis
                 </label>
                 <label>
                     <input type="radio" name="subject" value="Other" />
