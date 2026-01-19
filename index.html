@@ -2,26 +2,28 @@
 <html lang="en">
 
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17841359912">
-</script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17841359912">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'AW-17841359912');
-</script>
+        gtag('config', 'AW-17841359912');
+    </script>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
         content="Domain Exams — independent, proof-based examinations assessing mastery of undergraduate subject material." />
-        <meta property="og:title" content="Domain Exams" />
-        <meta property="og:description" content="Independent, proof-based exams for serious self-study in math and CS." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://domainexams.com/" />
-        <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="Domain Exams" />
+    <meta property="og:description" content="Independent, proof-based exams for serious self-study in math and CS." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://domainexams.com/" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="stylesheet" href="/css/base.css">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
@@ -35,493 +37,182 @@
 
     <title>Domain Exams</title>
 
-    <style>
-        :root {
-            --bg: #fbfaf7;
-            --surface: #fefdfb;
-            --text: #111111;
-            --hairline: #e6e1d8;
-            --focus: #1a73e8;
-            --maxw: 760px;
-            --text-width: 68ch;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font: 18px/1.6 ui-sans-serif, system-ui, -apple-system,
-                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        a {
-            color: inherit;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 2px;
-        }
-
-        a:hover {
-            text-decoration: none;
-        }
-
-        /* =========================
-       Layout
-       ========================= */
-
-        .page {
-            position: relative;
-            min-height: 100vh;
-            background: var(--bg);
-            overflow-x: clip;
-        }
-
-        .wrap {
-            position: relative;
-            z-index: 1;
-            max-width: var(--maxw);
-            margin: 0 auto;
-            padding: 56px 20px 72px;
-        }
-
-        header {
-            margin-bottom: 34px;
-        }
-
-        h1 {
-            margin: 0 0 30px;
-            font-size: clamp(48px, 8vw, 100px);
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            line-height: 1.02;
-            max-width: 18ch;
-        }
-
-        h2 {
-            margin: 0 0 12px;
-            font-size: 22px;
-            font-weight: 650;
-            letter-spacing: -0.01em;
-        }
-
-        p {
-            margin: 12px 0;
-            max-width: var(--text-width);
-        }
-
-        ul {
-            margin: 12px 0 0;
-            padding-left: 20px;
-            max-width: 72ch;
-        }
-
-        li {
-            margin: 8px 0;
-        }
-
-        section {
-            margin-top: 32px;
-        }
-
-        .hero-cta {
-            margin: 14px 0 0;
-            font-weight: 600;
-        }
-
-        .cta-note {
-            font-weight: 400;
-            color: #444;
-        }
-
-        /* =========================
-       Form (unchanged)
-       ========================= */
-
-        form {
-            margin-top: 12px;
-        }
-
-        .form-card {
-            border: 1px solid var(--hairline);
-            border-radius: 12px;
-            padding: 22px 18px;
-            background: var(--surface);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-        }
-
-        .field {
-            margin: 18px 0;
-        }
-
-        .field:first-child {
-            margin-top: 0;
-        }
-
-        .field:last-child {
-            margin-bottom: 0;
-        }
-
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        input[type="email"],
-        input[type="text"],
-        textarea {
-            width: 100%;
-            font-size: 16px;
-            padding: 10px 12px;
-            border: 1px solid var(--hairline);
-            border-radius: 8px;
-            font-family: inherit;
-            background: #ffffff;
-            color: var(--text);
-        }
-
-        textarea {
-            min-height: 110px;
-            resize: vertical;
-        }
-
-        input:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--focus);
-            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
-        }
-
-        .grid-checks {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 4px 24px;
-            padding-top: 6px;
-        }
-
-        .grid-checks label {
-            font-weight: 400;
-            margin: 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            line-height: 1.45;
-            cursor: pointer;
-        }
-
-.grid-checks input[type="checkbox"],
-.grid-checks input[type="radio"] {
-    width: auto;
-    margin-top: 3px;
-    flex-shrink: 0;
-}
-
-        .actions {
-            margin-top: 20px;
-        }
-
-        button {
-            background: var(--text);
-            color: var(--bg);
-            border: 1px solid var(--text);
-            border-radius: 10px;
-            padding: 10px 14px;
-            font-weight: 650;
-            cursor: pointer;
-        }
-
-        button:hover {
-            opacity: 0.92;
-        }
-
-        footer {
-            margin-top: 44px;
-            padding-top: 18px;
-        }
-
-        @media (min-width: 720px) {
-            .form-card {
-                padding: 26px 22px;
-            }
-
-            .grid-checks {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-fieldset {
-    border: 0;
-    padding: 0;
-    margin: 0;
-    min-inline-size: 0; /* avoids weird Firefox sizing */
-}
-
-legend {
-    padding: 0;
-    margin-bottom: 6px;
-    font-weight: 600;
-}
-
-/* =========================
-   Sidebar margin images (larger + more visible)
-   ========================= */
-.page::before,
-.page::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: min(44vw, 560px);
-  pointer-events: none;
-  z-index: 0;
-
-  background-repeat: no-repeat;
-  background-size: 170%;
-
-  opacity: 0.12;
-  filter: none;
-  transform-origin: center;
-}
-
-/* Left: anchor near the top */
-.page::before {
-  left: 0;
-  background-image: url("assets/margins/galois.1.png");
-
-  background-position: 50% 6%;   /* top-ish */
-  transform: rotate(-2deg) translateX(-10px);
-
--webkit-mask-image: linear-gradient(to right,
-  rgba(0,0,0,1) 0%,
-  rgba(0,0,0,0.85) 55%,
-  rgba(0,0,0,0.35) 70%,
-  rgba(0,0,0,0) 82%);
-mask-image: linear-gradient(to right,
-  rgba(0,0,0,1) 0%,
-  rgba(0,0,0,0.85) 55%,
-  rgba(0,0,0,0.35) 70%,
-  rgba(0,0,0,0) 82%);
-}
-
-/* Right: anchor around the middle */
-.page::after {
-  right: 0;
-  background-image: url("assets/margins/galois.2.png");
-
-background-position: 50% 35%;
-  transform: rotate(2deg) translateX(10px);
-
--webkit-mask-image: linear-gradient(to left,
-  rgba(0,0,0,1) 0%,
-  rgba(0,0,0,0.85) 55%,
-  rgba(0,0,0,0.35) 70%,
-  rgba(0,0,0,0) 82%);
-mask-image: linear-gradient(to left,
-  rgba(0,0,0,1) 0%,
-  rgba(0,0,0,0.85) 55%,
-  rgba(0,0,0,0.35) 70%,
-  rgba(0,0,0,0) 82%);
-}
-
-/* Hide on smaller screens */
-@media (max-width: 1600px) {
-  .page::before,
-  .page::after {
-    width: min(34vw, 460px);
-  }
-}
-
-@media (max-width: 1350px) {
-  .page::before,
-  .page::after { display: none; }
-}
-
-.vision-quote {
-  margin: 14px 0;
-  padding-left: 14px;
-  border-left: 2px solid var(--hairline);
-  max-width: var(--text-width);
-}
-
-.vision-quote p {
-  margin: 0;
-}
-
-.vision-quote footer {
-  margin-top: 0px;
-}
-
-    </style>
 </head>
 
 
 <body>
     <div class="page">
-    <div class="wrap">
-        <header>
-            <h1>Domain Exams</h1>
-            <p><strong>Independent, proof-based exams for serious self-study in math and CS.</strong></p>
+        <div class="wrap">
+            <header>
+                <h1>Domain Exams</h1>
+                <p><strong>Independent, proof-based exams for serious self-study in math and CS.</strong></p>
 
-<p class="hero-cta">
-<a href="#register-interest">Choose your first exam</a>
-<span class="cta-note">Register interest in your preferred subject.</span>
-</p>
-    
-        </header>
-        <section id="vision">
-            <h2>The Vision</h2>
-<blockquote class="vision-quote">
-    <p>
-        "Free education is abundant, all over the Internet. It's the desire to learn that's scarce."
-    </p>
-    <footer>— Naval Ravikant</footer>
-</blockquote>
-        <p>
-Textbooks are cheap, online courses are everywhere, and AI tutors are widely available.
-Access to learning is no longer the bottleneck.
-        </p>
-        <p>
-        What's missing is validation.
-        </p>
-        <p>
-        There is no widely recognized way to demonstrate mastery of a subject—no matter how deeply or seriously it was studied.
-        </p>
-        <p>
-        Domain Exams fixes that.
-        </p>
-        <p>
-        We envision a world where anyone with the discipline to master a subject independently can earn a durable, credible
-        signal of that achievement.
-        </p>
-        </section>
+                <p class="hero-cta">
+                    <a href="#register-interest">Choose your first exam</a>
+                    <span class="cta-note">Register interest in your preferred subject.</span>
+                </p>
 
-        <section id="about">
-            <h2>What Domain Exams Are</h2>
-        
-<p>
-Domain Exams are independent, written examinations that assess mastery of undergraduate-level material in mathematics
-and theoretical computer science. They emphasize correct reasoning and proof-based justification, with clearly defined
-scope and standards.
-</p>
+            </header>
+            <section id="vision">
+                <h2>The Vision</h2>
+                <blockquote class="vision-quote">
+                    <p>
+                        "Free education is abundant, all over the Internet. It's the desire to learn that's scarce."
+                    </p>
+                    <footer>— Naval Ravikant</footer>
+                </blockquote>
+                <p>
+                    Textbooks are cheap, online courses are everywhere, and AI tutors are widely available.
+                    Access to learning is no longer the bottleneck.
+                </p>
+                <p>
+                    What's missing is validation.
+                </p>
+                <p>
+                    There is no widely recognized way to demonstrate mastery of a subject—no matter how deeply or
+                    seriously it was studied.
+                </p>
+                <p>
+                    Domain Exams fixes that.
+                </p>
+                <p>
+                    We envision a world where anyone with the discipline to master a subject independently can earn a
+                    durable, credible
+                    signal of that achievement.
+                </p>
+            </section>
 
-<ul>
-    <li><strong>Written and proof-based</strong> — not multiple choice.</li>
-    <li><strong>Standards, not ranking</strong> — results reflect absolute performance.</li>
-    <li><strong>Depth over breadth</strong> — each exam is narrow but rigorous.</li>
-    <li><strong>Reasoning-first</strong> — understanding over memorization.</li>
-</ul>
+            <section id="about">
+                <h2>What Domain Exams Are</h2>
 
-<p>
-      Subjects will include Linear Algebra, Algorithms and Data Structures, Probability, Discrete Mathematics, Theory of Computation, and others.
-    Detailed exam scopes and standards will be published prior to launch.
-</p>
-        </section>
+                <p>
+                    Domain Exams are independent, written examinations that
+                    assess mastery of undergraduate-level material in
+                    mathematics and theoretical computer science. They emphasize
+                    correct reasoning and proof-based justification, with
+                    clearly defined scope and standards.
+                </p>
 
-        <section id="why">
-            <h2>Why Participate</h2>
-            <ul>
-                <li>Demonstrate honors-level undergraduate understanding.</li>
-                <li>Turn self-study into a clear, external objective.</li>
-                <li>Earn an independent, durable signal of mastery.</li>
-            </ul>
-        </section>
+                <ul>
+                    <li><strong>Written and proof-based</strong> — not multiple choice.</li>
+                    <li><strong>Standards, not ranking</strong> — results reflect absolute performance.</li>
+                    <li><strong>Depth over breadth</strong> — each exam is narrow but rigorous.</li>
+                    <li><strong>Reasoning-first</strong> — understanding over memorization.</li>
+                </ul>
 
-        <section id="what-you-get">
-            <h2>What You Receive</h2>
-<ul>
-    <li>A result of <strong>Mastery</strong>, <strong>Proficiency</strong>, <strong>Partial</strong>,
-        or <strong>Insufficient</strong>.</li>
-    <li>A printed certificate for outcomes of <strong>Mastery</strong> or <strong>Proficiency</strong>.</li>
-    <li>A shareable result page under an unguessable URL (not indexed).</li>
-</ul>
-        </section>
+                <p>
+                    Subjects will include Linear Algebra, Algorithms and Data Structures, Probability, Discrete
+                    Mathematics, Theory of Computation, and others.
+                    Detailed exam scopes and standards will be published prior to launch.
+                </p>
+            </section>
 
+            <section id="why">
+                <h2>Why Participate</h2>
+                <ul>
+                    <li>Demonstrate honors-level undergraduate understanding.</li>
+                    <li>Turn self-study into a clear, external objective.</li>
+                    <li>Earn an independent, durable signal of mastery.</li>
+                </ul>
+            </section>
 
- <section id="register-interest">
-    <h2>Choose Your First Exam</h2>
-    <p>
-Select your preferred exam subject. Your choice helps determine which exam launches first.
-Email and subject selection are required; all other fields are optional.
-    </p>
-<form name="interest" method="POST" data-netlify="true" data-netlify-honeypot="company" action="/thanks/">
-    <input type="hidden" name="form-name" value="interest" />
+            <section id="what-you-get">
+                <h2>What You Receive</h2>
+                <ul>
+                    <li>A result of <strong>Mastery</strong>, <strong>Proficiency</strong>, <strong>Partial</strong>,
+                        or <strong>Insufficient</strong>.</li>
+                    <li>A printed certificate for outcomes of <strong>Mastery</strong> or <strong>Proficiency</strong>.
+                    </li>
+                    <li>A shareable result page under an unguessable URL (not indexed).</li>
+                </ul>
+            </section>
 
-    <div class="form-card">
-        <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" />
+            <section id="register-interest">
+                <h2>Choose Your First Exam</h2>
+                <p>
+                    Select your preferred exam subject. Your choice helps determine which exam launches first.
+                    Email and subject selection are required; all other fields are optional.
+                </p>
+                <form name="interest" method="POST" data-netlify="true" data-netlify-honeypot="company"
+                    action="/thanks/">
+                    <input type="hidden" name="form-name" value="interest" />
+
+                    <div class="form-card">
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" required autocomplete="email"
+                                placeholder="you@example.com" />
+                        </div>
+
+                        <fieldset class="field">
+                            <legend>Subject of Primary Interest</legend>
+                            <div class="grid-checks">
+                                <label>
+                                    <input type="radio" name="subject" value="Algorithms and Data Structures"
+                                        required />
+                                    Algorithms and Data Structures
+                                </label>
+                                <label>
+                                    <input type="radio" name="subject" value="Linear Algebra" />
+                                    Linear Algebra
+                                </label>
+                                <label>
+                                    <input type="radio" name="subject" value="Probability" />
+                                    Probability
+                                </label>
+                                <label>
+                                    <input type="radio" name="subject" value="Discrete Mathematics" />
+                                    Discrete Mathematics
+                                </label>
+                                <label>
+                                    <input type="radio" name="subject" value="Theory of Computation" />
+                                    Theory of Computation
+                                </label>
+                                <label>
+                                    <input type="radio" name="subject" value="Abstract Algebra" />
+                                    Abstract Algebra
+                                </label>
+                                <label>
+                                    <input type="radio" name="subject" value="Real Analysis" />
+                                    Real Analysis
+                                </label>
+                                <label>
+                                    <input type="radio" name="subject" value="Other" />
+                                    Other (please specify below)
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="field">
+                            <label for="locations">Preferred testing location (optional)</label>
+                            <input id="locations" name="locations" type="text"
+                                placeholder="e.g., New York, Boston, San Francisco" />
+                        </div>
+
+                        <div class="field">
+                            <label for="notes">Notes or feedback (optional)</label>
+                            <textarea id="notes" name="notes" placeholder="Tell us more (optional)"></textarea>
+                        </div>
+
+                        <div class="field" style="display:none;">
+                            <label for="company">Company</label>
+                            <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
+                        </div>
+
+                        <div class="actions">
+                            <button type="submit">Submit Exam Preference</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <footer>
+                <p>
+                    Contact: <a href="mailto:hello@domainexams.com">hello@domainexams.com</a>
+                </p>
+            </footer>
         </div>
-
-<fieldset class="field">
-    <legend>Subject of Primary Interest</legend>
-            <div class="grid-checks">
-                <label>
-                    <input type="radio" name="subject" value="Algorithms and Data Structures" required />
-                    Algorithms and Data Structures
-                </label>
-                <label>
-                    <input type="radio" name="subject" value="Linear Algebra" />
-                    Linear Algebra
-                </label>
-                <label>
-                    <input type="radio" name="subject" value="Probability" />
-                    Probability
-                </label>
-                <label>
-                    <input type="radio" name="subject" value="Discrete Mathematics" />
-                    Discrete Mathematics
-                </label>
-                <label>
-                    <input type="radio" name="subject" value="Theory of Computation" />
-                    Theory of Computation
-                </label>
-                <label>
-                    <input type="radio" name="subject" value="Abstract Algebra" />
-                    Abstract Algebra
-                </label>
-                <label>
-                    <input type="radio" name="subject" value="Real Analysis" />
-                    Real Analysis
-                </label>
-                <label>
-                    <input type="radio" name="subject" value="Other" />
-                    Other (please specify below)
-                </label>
-            </div>
-        </fieldset>
-
-        <div class="field">
-            <label for="locations">Preferred testing location (optional)</label>
-            <input id="locations" name="locations" type="text" placeholder="e.g., New York, Boston, San Francisco" />
-        </div>
-
-        <div class="field">
-            <label for="notes">Notes or feedback (optional)</label>
-            <textarea id="notes" name="notes"
-                placeholder="Tell us more (optional)"></textarea>
-        </div>
-
-        <div class="field" style="display:none;">
-            <label for="company">Company</label>
-            <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
-        </div>
-
-        <div class="actions">
-            <button type="submit">Submit Exam Preference</button>
-        </div>
-    </div>
-</form>
-</section>
-
-        <footer>
-            <p>
-                Contact: <a href="mailto:hello@domainexams.com">hello@domainexams.com</a>
-            </p>
-        </footer>
-    </div>
     </div>
 </body>
+
 </html>
