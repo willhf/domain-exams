@@ -18,24 +18,41 @@
 
     <meta property="og:title" content="Algorithms & Data Structures Exam | Domain Exams" />
     <meta property="og:description"
-        content="A rigorous, proof-based examination of core undergraduate algorithms and data structures." />
+        content="A rigorous, proof-based exam of core undergraduate algorithms and data structures." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://domainexams.com/exams/algorithms" />
-
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
+          <rect width='64' height='64' fill='%23fbfaf7'/>
+          <text x='32' y='42'
+                text-anchor='middle'
+                font-size='28'
+                font-family='Georgia,Times,serif'
+                fill='%23111111'>DE</text>
+        </svg>">
     <title>Algorithms & Data Structures | Domain Exams</title>
 
     <link rel="stylesheet" href="/css/base.css">
 </head>
 
-<body>
+<body class="exam-page">
     <div class="page">
         <div class="wrap">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
 
+                <a href="/">Domain Exams</a>
+                <span class="sep">›</span>
+                <a href="/#exams">Exams</a>
+                <span class="sep">›</span>
+                <span class="current">Algorithms &amp; Data Structures</span>
+            </nav>
             <header>
                 <h1>Algorithms &amp; Data Structures</h1>
                 <p class="hero-cta">
                     <a href="/#register-interest">Register interest</a>
-                    <span class="cta-note">Be notified when this exam becomes available.</span>
+                    <span class="cta-note">
+                        Help determine initial exam dates and locations.
+                    </span>
                 </p>
             </header>
 
@@ -45,7 +62,7 @@
                     <li><strong>Level:</strong> Undergraduate (Honors)</li>
                     <li><strong>Duration:</strong> 2.5 hours</li>
                     <li><strong>Format:</strong> Written, proof-based (pseudocode expected)</li>
-                    <li><strong>Materials:</strong> Closed book</li>
+                    <li><strong>Materials:</strong> Closed-book</li>
                 </ul>
             </section>
 
@@ -62,8 +79,7 @@
 
                 <p>
                     The exam is closed-book and does not provide definitions of core concepts or standard algorithms.
-                    Candidates are
-                    expected to know them and to justify claims precisely.
+                    Candidates should be able to state definitions precisely.
                 </p>
 
                 <p class="note">The scope described here is subject to refinement.</p>
@@ -75,7 +91,6 @@
                     <li>Solving recurrences (substitution, recursion tree, Master Theorem)</li>
                     <li>Amortized analysis (accounting and potential methods)</li>
                 </ul>
-                <p class="refs">References: CLRS (Ch. 2–4, 14); Sedgewick &amp; Wayne (§1.4)</p>
 
                 <h3>Algorithm Design Strategies</h3>
                 <ul>
@@ -83,7 +98,6 @@
                     <li>Greedy algorithms (including correctness arguments such as exchange arguments)</li>
                     <li>Dynamic programming (optimal substructure; overlapping subproblems)</li>
                 </ul>
-                <p class="refs">References: CLRS (Ch. 4, 14–16); Sedgewick &amp; Wayne (Ch. 2.2–2.3)</p>
 
                 <h3>Data Structures</h3>
                 <ul>
@@ -95,10 +109,10 @@
                 </ul>
                 <p>
                     Candidates are expected to be able to implement and analyze the core operations for each data
-                    structure: insert, delete,
-                    search, min, max, and enumeration/traversal.
+                    structure—insert, delete,
+                    search, min, max, and enumeration/traversal—and may be asked to write correct pseudocode for these
+                    operations on demand.
                 </p>
-                <p class="refs">References: CLRS (Ch. 6, 10–13, 18); Sedgewick &amp; Wayne (Ch. 1.3, 3.2–3.4, 6)</p>
 
                 <h3>Sorting and Order Statistics</h3>
                 <ul>
@@ -112,7 +126,6 @@
                     the assumptions or
                     constraints that distinguish these algorithms from one another.
                 </p>
-                <p class="refs">References: CLRS (Ch. 2, 6–9); Sedgewick &amp; Wayne (Ch. 2)</p>
 
                 <h3>Graph Algorithms</h3>
                 <ul>
@@ -122,7 +135,6 @@
                     <li>Minimum spanning trees (Kruskal, Prim)</li>
                     <li>Shortest paths (Bellman–Ford, Dijkstra; correctness conditions)</li>
                 </ul>
-                <p class="refs">References: CLRS (Ch. 20–24); Sedgewick &amp; Wayne (Ch. 4)</p>
 
                 <h3>String Algorithms</h3>
                 <ul>
@@ -131,7 +143,6 @@
                     <li>Trie-based string processing</li>
                     <li>Suffix arrays (basic construction idea and typical applications)</li>
                 </ul>
-                <p class="refs">References: CLRS (Ch. 14.4, 32); Sedgewick &amp; Wayne (Ch. 5)</p>
             </section>
 
             <section id="out-of-scope">
@@ -182,67 +193,84 @@
                 </ul>
             </section>
 
-            <section id="canonical-reference-texts">
-                <h2>Reference Texts</h2>
-
-                <p>
-                    While the exam scope is defined independently of any single textbook, candidates
-                    are expected to be comfortable with material as presented and analyzed in the
-                    following canonical undergraduate texts. These references collectively define
-                    the <em>level and depth</em> of understanding expected on the exam.
-                </p>
-
-                <ul>
-                    <li><strong>CLRS</strong> — <em>Introduction to Algorithms</em> (Cormen, Leiserson, Rivest, Stein)
-                    </li>
-                    <li><strong>Sedgewick &amp; Wayne</strong> — <em>Algorithms</em></li>
-                </ul>
-
-                <p class="note">
-                    References are illustrative rather than exhaustive; candidates are responsible
-                    only for material within the published exam scope.
-                </p>
-            </section>
 
             <section id="format">
                 <h2>Exam Format</h2>
                 <ul>
                     <li>Written exam; responses in clear English with pseudocode and formal reasoning.</li>
-                    <li>Closed book; notes, calculators, phones, and electronic devices are prohibited.</li>
+                    <li>Closed-book; notes, calculators, phones, and electronic devices are prohibited.</li>
                     <li>Writing materials are provided; additional pens or pencils are permitted.</li>
                     <li>Restroom and water breaks are permitted but do not pause the exam timer.</li>
                     <li>Partial credit may be awarded for correct reasoning.</li>
                 </ul>
             </section>
 
-
             <section id="standards">
                 <h2>Performance Standards</h2>
                 <p>
                     Results are reported as <strong>Mastery</strong>, <strong>Proficiency</strong>,
-                    <strong>Partial</strong>, or <strong>Insufficient</strong>, according to
-                    Domain Exams’ published performance standards.
+                    <strong>Partial</strong>, or <strong>Insufficient</strong>.
                 </p>
                 <p>
                     Results reflect absolute performance against defined criteria, not relative
                     ranking among candidates.
                 </p>
-                <p>
-                    <a href="/standards/performance.html">View detailed performance standards →</a>
-                </p>
+                <ul>
+                    <li>
+                        <strong>Mastery</strong> — Demonstrates comprehensive and reliable command of the
+                        subject matter. Solutions are consistently correct, well-justified, and show
+                        strong understanding, with at most minor errors or omissions.
+                    </li>
+                    <li>
+                        <strong>Proficiency</strong> — Demonstrates substantial understanding of the
+                        subject matter, but with one or more non-trivial errors, gaps, or incomplete
+                        justifications.
+                    </li>
+                    <li>
+                        <strong>Partial</strong> — Demonstrates limited or uneven understanding. Some
+                        correct ideas or techniques are present, but significant errors or omissions
+                        prevent full solutions.
+                    </li>
+                    <li>
+                        <strong>Insufficient</strong> — Does not demonstrate adequate understanding of
+                        the subject matter. Solutions are largely incorrect, missing, or unsupported.
+                    </li>
+                </ul>
             </section>
 
-            <section id="sample">
-                <h2>Sample Tests</h2>
-                <p>
-                    Representative sample questions and solutions will be provided prior to
-                    exam launch.
-                </p>
+            <section id="outcomes">
+                <h2>What Mastery Indicates</h2>
+                <ul>
+                    <li>
+                        Strong preparation for algorithmic problem-solving expected in technical interviews.
+                    </li>
+                    <li>
+                        Readiness for advanced undergraduate or graduate-level coursework in algorithms.
+                    </li>
+                    <li>
+                        Demonstrated ability to reason rigorously about algorithms independently of implementation
+                        details.
+                    </li>
+                </ul>
             </section>
-
+            <section id="canonical-reference-texts">
+                <h2>Recommended Resources</h2>
+                <p>
+                    These are recommended primary resources for preparation. The exam is governed
+                    by the published scope; these texts reflect the level and style expected.
+                </p>
+                <ul>
+                    <li><em>Introduction to Algorithms</em> (Cormen, Leiserson, Rivest, Stein)</li>
+                    <li><em>Algorithms</em> (Sedgewick &amp; Wayne)</li>
+                </ul>
+            </section>
             <footer>
                 <p>
                     <a href="/">← Back to Domain Exams</a>
+                </p>
+                <p class="note">
+                    Interested in this exam? <a href="/#register-interest">Register your interest</a> to help guide
+                    initial exam dates and locations.
                 </p>
                 <p>
                     Contact: <a href="mailto:hello@domainexams.com">hello@domainexams.com</a>

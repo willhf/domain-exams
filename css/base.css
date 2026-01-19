@@ -249,7 +249,7 @@ legend {
 }
 
 /* Left: anchor near the top */
-.page::before {
+.landing-page .page::before {
     left: 0;
     background-image: url("/assets/margins/galois.1.png");
     background-position: 50% 6%;
@@ -268,7 +268,7 @@ legend {
 }
 
 /* Right: anchor around the middle */
-.page::after {
+.landing-page .page::after {
     right: 0;
     background-image: url("/assets/margins/galois.2.png");
     background-position: 50% 35%;
@@ -319,4 +319,48 @@ legend {
 
 .vision-quote footer {
     margin-top: 0px;
+}
+
+/* =========================
+   Breadcrumbs
+   ========================= */
+
+.breadcrumbs {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 18px;
+    max-width: var(--text-width);
+}
+
+.breadcrumbs a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs .sep {
+    margin: 0 6px;
+    color: #aaa;
+}
+
+/* .breadcrumbs .current {
+    color: #222;
+} */
+
+.breadcrumb-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    line-height: 1;
+}
+
+.breadcrumb-icon svg {
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+    display: inline-block;
+    opacity: 1;
 }
