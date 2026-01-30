@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 24 24"
+     stroke="currentColor"
+     fill="none"
+     stroke-width="1.1"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+  <!-- edges -->
+  <!-- root splits: same horizontal offset (+/- 5) -->
+  <line x1="14.5" y1="5" x2="9.5"  y2="12" />
+  <line x1="14.5" y1="5" x2="19.5" y2="12" />
+
+  <!-- left interior splits: same horizontal offset (+/- 5) -->
+  <line x1="9.5"  y1="12" x2="4.5"  y2="19" />
+  <line x1="9.5"  y1="12" x2="14.5" y2="19" />
+
+  <!-- nodes -->
+  <!-- root (interior) -->
+  <circle cx="14.5" cy="5"  r="1.5" fill="currentColor" />
+
+  <!-- left interior -->
+  <circle cx="9.5"  cy="12" r="1.5" fill="currentColor" />
+
+  <!-- right leaf (shallower side) -->
+  <circle cx="19.5" cy="12" r="1.5" fill="currentColor" />
+
+  <!-- deepest leaves (left subtree) -->
+  <circle cx="4.5"  cy="19" r="1.5" fill="currentColor" />
+  <circle cx="14.5" cy="19" r="1.5" fill="currentColor" />
+</svg>

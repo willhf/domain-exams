@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 24 24"
+     stroke="currentColor"
+     fill="none"
+     stroke-width="1.4"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+  <!-- left bracket: three lines -->
+  <line x1="6" y1="4"  x2="4" y2="4" />
+  <line x1="4" y1="4"  x2="4" y2="20" />
+  <line x1="4" y1="20" x2="6" y2="20" />
+
+  <!-- right bracket: three lines -->
+  <line x1="18" y1="4"  x2="20" y2="4" />
+  <line x1="20" y1="4"  x2="20" y2="20" />
+  <line x1="20" y1="20" x2="18" y2="20" />
+
+  <!-- zeroes -->
+  <circle cx="9" cy="15" r="1.5"/>
+  <circle cx="15" cy="9" r="1.5"/>
+
+  <!-- ones -->
+  <line x1="9" y1="7.5"  x2="9" y2="10.5" />
+  <line x1="15" y1="13.5"  x2="15" y2="16.5" />
+
+</svg>

@@ -364,3 +364,20 @@ legend {
     display: inline-block;
     opacity: 1;
 }
+
+.katex,
+.katex * {
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+}
+.katex .mbin {
+    margin: 0 0.1667em;
+}
+
+.katex .mrel {
+    margin: 0 0.2778em;
+}
+
+.katex .mpunct {
+    margin-right: 0.1667em;
+}

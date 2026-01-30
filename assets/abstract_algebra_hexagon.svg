@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 24 24"
+     stroke="currentColor"
+     fill="none"
+     stroke-width="1.1"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+  <!-- edges of the hexagon -->
+  <line x1="18" y1="12" x2="15" y2="7"  />
+  <line x1="15" y1="7"  x2="9"  y2="7"  />
+  <line x1="9"  y1="7"  x2="6"  y2="12" />
+  <line x1="6"  y1="12" x2="9"  y2="17" />
+  <line x1="9"  y1="17" x2="15" y2="17" />
+  <line x1="15" y1="17" x2="18" y2="12" />
+
+  <!-- nodes at vertices -->
+  <circle cx="18" cy="12" r="1.5" fill="currentColor" />
+  <circle cx="15" cy="7"  r="1.5" fill="currentColor" />
+  <circle cx="9"  cy="7"  r="1.5" fill="currentColor" />
+  <circle cx="6"  cy="12" r="1.5" fill="currentColor" />
+  <circle cx="9"  cy="17" r="1.5" fill="currentColor" />
+  <circle cx="15" cy="17" r="1.5" fill="currentColor" />
+
+</svg>
