@@ -177,7 +177,36 @@ This section covers elementary properties of the integers, divisibility, and mod
 
 ### Probability
 
-- todo
+- **Foundations**
+  - Definitions
+    - Sample space, event
+    - Union, intersection, complement
+    - Conditional probability, independent events
+    - Finite probability model
+  - Axioms
+    - Kolmogorov axioms
+  - Theorems (proof required)
+    - Complement rule: $P(A^c) = 1 - P(A)$
+    - Inclusion–Exclusion Principle (Two Events)
+    - Law of Total Probability (finite case)
+    - Bayes’ Theorem
+
+- **Random Variables and Expectation**
+  - Definitions
+    - Random variable, expected value
+    - Independent random variables
+    - Indicator random variables
+  - Theorems (proof required)
+    - $E[\mathbf{1}_A] = P(A)$
+    - Linearity of expectation: $E[X + Y] = E[X] + E[Y]$
+    - If $X$ and $Y$ are independent random variables, then $E[XY] = E[X]E[Y]$
+
+- **Variance**
+  - Definitions
+    - Variance
+  - Theorems (proof required)
+    - Let $X$ be a real-valued random variable. Then $\text{Var}(X) = E[X^2] - E[X]^2$
+    - Let $a, b \in \mathbb{R}$. Then $\text{Var}(aX + b) = a^2 \text{Var}(X)$
 
 </section>
 
