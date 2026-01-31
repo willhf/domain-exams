@@ -365,11 +365,13 @@ legend {
     opacity: 1;
 }
 
+/* Preserve KaTeX spacing semantics */
 .katex,
 .katex * {
     letter-spacing: normal !important;
     word-spacing: normal !important;
 }
+
 .katex .mbin {
     margin: 0 0.1667em;
 }
@@ -380,4 +382,21 @@ legend {
 
 .katex .mpunct {
     margin-right: 0.1667em;
+}
+
+/* DO NOT override KaTeX baseline math */
+.katex {
+    font-size: 1em;
+    vertical-align: baseline;
+    /* restore correct baseline handling */
+}
+
+/* Allow KaTeX to control its own internal line boxes */
+.katex * {
+    line-height: inherit;
+}
+
+/* KaTeX builds vertical lists for accents; keep them from inheriting weird alignment */
+.katex .vlist {
+    vertical-align: 0 !important;
 }

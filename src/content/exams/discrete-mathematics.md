@@ -74,17 +74,70 @@ todo add information about the exam scope
 
 ### Graph Theory
 
-- Definitions
-  - Graph, Adjacent Vertices, Vertex Degree, Complete Graph
-  - Subgraph, Induced Subgraph, Clique, Clique Number
-  - Independent Set, Independent Number
-  - Graph Complement
-  - Walk, Walk Concatenation, Path, Path Graph, Connected To
-- Theorems (Proof Required)
-  - Lemma: If there exists a walk between two vertices, then there exists a path between those vertices
-  - Proposition. The relation “is connected to” on the vertex set of a graph is
-    an equivalence relation. Its equivalence classes are the connected
-    components of the graph.
+- **Basic Graph Structure**
+  - Definitions
+    - Graph (simple), Vertex set, Edge set
+    - Adjacent vertices, Vertex degree, Isolated vertex
+    - Order, Size, Maximum degree, Minimum degree
+    - Complete graph
+    - Subgraph, Induced subgraph
+  - Theorems (proof required)
+    - The sum of vertex degrees in a graph is twice the number of edges.
+
+- **Cliques and Independent Sets**
+  - Definitions
+    - Complement graph
+    - Clique, Maximum clique, Maximal clique, Clique number
+    - Independent set, Maximum independent set, Maximal independent set, Independence number
+
+  - Theorems (proof required)
+    - The size of a maximum clique in a graph equals the size of a maximum independent set in the complement graph.
+    - Every graph on 6 vertices contains either a clique of size 3 or an independent set of size 3.
+
+- **Walks, Paths, and Connectivity**
+  - Definitions
+    - Walk, Walk concatenation
+    - Path (simple path; no repeated vertices), Path graph, Distance
+    - Connected to (relation), Connected graph, Component
+    - Cut edge (bridge)
+  - Theorems (proof required)
+    - If there exists a walk between two vertices, then there exists a path between those vertices.
+    - The relation “is connected to” on the vertex set of a graph is an equivalence relation.
+    - If a cut edge is removed from a connected graph, the graph has exactly two connected components.
+
+- **Cycles and Trees**
+  - Definitions
+    - Cycle, acyclic graph, Tree, Leaf, Spanning tree, Forest
+  - Theorems (proof required)
+    - A graph is connected if and only if it contains a spanning tree.
+    - Equivalent characterizations of trees:
+      - A graph is a tree if and only if there exists a unique path between every pair of vertices.
+      - A graph is a tree if and only if it is connected and acyclic.
+      - A connected graph is a tree if and only if every edge is a cut edge.
+      - A tree with $n \ge 1$ vertices has exactly $n - 1$ edges.
+    - Every tree with at least two vertices has at least two leaves.
+    - Removing a leaf and its incident edge from a tree yields a tree.
+
+- **Eulerian Graphs**
+  - Definitions
+    - Eulerian trail, Eulerian tour (circuit), Eulerian graph
+  - Theorems (proof required)
+    - A connected graph has an Eulerian tour if and only if every vertex has even degree.
+    - A connected graph has an Eulerian trail but no Eulerian tour if and only if it has exactly two vertices of odd degree.
+
+- **Graph Coloring**
+  - Definitions
+    - Proper vertex coloring, $k$-coloring, chromatic number $\chi(G)$
+    - Maximum degree $\Delta(G)$, clique number $\omega(G)$
+    - Bipartite graph, complete bipartite graph
+  - Theorems (proof required)
+    - If $H$ is a subgraph of $G$, then $\chi(H) \le \chi(G)$.
+    - For any graph $G$, $\chi(G) \le \Delta(G) + 1$.
+    - For any graph $G$, $\chi(G) \ge \omega(G)$.
+    - If $G$ is bipartite, then $\chi(G) \le 2$.
+  - Theorems (statement and use required; proof not required)
+    - A graph is bipartite if and only if it is $2$-colorable.
+    - A graph is bipartite if and only if it contains no cycles of odd length.
 
 ## Number Theory
 
@@ -135,8 +188,10 @@ The following topics are not covered in the exam. This section is provided
 to clarify boundaries and help candidates focus their preparation.
 
 - Abstract Algebra
+- Cryptography
 - Asymptotic Analysis (covered in [Algorithms & Data Structures](/exams/algorithms))
 - Digital Circuits
+- Planar Graphs
 - Automata Theory, Formal Languages, and Regular Expressions
 
 </section>
