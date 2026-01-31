@@ -30,6 +30,15 @@ Help determine initial exam dates and locations. CTA here
 
 </section>
 
+<section id="prerequisites">
+
+## Recommended Background
+
+Mastery of [Discrete Mathematics](/exams/discrete-mathematics) is recommended
+prior to self-study for this exam.
+
+</section>
+
 <section>
 
 ## Exam Scope
@@ -102,20 +111,24 @@ The following topics are not covered in the exam. This section is provided
 to clarify boundaries and help candidates focus their preparation.
 
 - Randomization and complexity theory
+
   - Randomized algorithms (Monte Carlo / Las Vegas)
   - Computational complexity theory (NP-completeness, reductions, complexity classes)
   - Approximation algorithms and approximation guarantees
 
 - Advanced computational models
+
   - Parallel, distributed, and concurrent algorithms
   - Quantum algorithms
 
 - Number-theoretic and cryptographic topics
+
   - Number-theoretic algorithms
   - Cryptographic algorithms and primitives
   - Hash function construction (as distinct from hash tables)
 
 - Numerical and applied domains
+
   - Linear and integer programming
   - Data compression and coding theory
   - Algorithms specific to machine learning or artificial intelligence

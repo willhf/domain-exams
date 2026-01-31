@@ -39,6 +39,16 @@ abstraction, careful logic, and rigorous proof.
 
 </section>
 
+<section id="prerequisites">
+
+## Recommended Background
+
+Successful study of this exam scope assumes fluency with high-school algebra
+(including equations, inequalities, exponents, and logarithms), as well as a
+willingness to engage with abstract, proof-based reasoning.
+
+</section>
+
 <section>
 
 ## Exam Scope
@@ -57,24 +67,92 @@ todo add information about the exam scope
   - Define terms above
   - Prove logical equivalences using algebraic properties and truth tables
 
-### Sets
-
-- You should understand definitions of: Set, Subset, Union, Intersection, Power
-  Set, Disjoint, Set Difference, Symmetric Difference, Cartesian Product
-- You should understand how to construct sets using set builder notation
-- You should know how to prove set equality, and that one set is a subset of another
-
 ### Proof Techniques
 
-- Direct, indirect, contrapositive, contradiction
+- Direct, indirect, contrapoitive, contradiction
 
-### Counting
+- TODO somewhere: quantifiers
 
-- todo
+### Structures
 
-### Graph Theory
+- **Sets**
+
+  - Definitions
+    - Set, Subset, Union, Intersection, Power Set, Disjoint
+    - Set Difference $A \setminus B$, Symmetric Difference $A \triangle B$, Cartesian Product $A \times B$
+  - Skills
+    - Understand how to construct sets using set builder notation
+    - Know how to prove set equality, and that one set is a subset of another
+  - Theorems (proof required)
+    - The size of the power set of a set with $n$ elements is $2^n$
+    - Let $A$ and $B$ be sets. Then $|A| + |B| = |A \cup B| + |A \cap B|$
+    - Let $A$ and $B$ be sets. Then $A \triangle B = (A \cup B) \setminus (A \cap B)$
+    - DeMorgan's laws
+      - $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$ and $A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C)$
+      - $(A \cup B)^c = A^c \cap B^c$ and $(A \cap B)^c = A^c \cup B^c$
+    - Let $A$ and $B$ be finite sets. Then $|A \times B| = |A| \times |B|$
+
+- **Relations**
+
+  - Definitions
+    - Relation, inverse relation
+    - Relation properties: reflexive, irreflexive, symmetric, antisymmetric, transitive
+    - Equivalence relation, equivalence class
+    - Partition
+    - Partial order, total order
+  - Theorems (proof required)
+    - The inverse of the inverse of a relation is the relation itself
+    - An equivalence relation on a set defines a partition of the set
+    - A partition of a set defines an equivalence relation
+
+- **Functions**
+
+  - Definitions
+    - Function, domain, codomain, range
+    - Equality of functions
+    - Injective, surjective, bijective
+    - Left inverse, right inverse, inverse
+    - Function composition, identity function
+    - Image and preimage of a set
+  - Theorems (proof required)
+    - A function has an inverse if and only if it is bijective
+    - Pigeonhole Principle: If $f : A \to B$ and $|A| > |B|$, then $f$ is not injective
+    - If there is a bijection between $A$ and $B$, then $|A| = |B|$
+    - Function composition is associative
+    - The composition of injective functions is injective; the composition of surjective functions is surjective
+    - If $f$ and $g$ are invertible, then $g \circ f$ is invertible and $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$
+  - Skills
+    - Prove that a function is injective, surjective, or bijective using multiple methods
+    - Use the Pigeonhole Principle in proof
+    - Prove equality of functions from first principles
+
+- **Permutations**
+  - Definitions
+    - Permutation of a finite set; symmetric group $S_n$
+    - Composition of permutations, identity, inverse
+    - Cycle, cycle notation
+    - Transposition
+    - Even and odd permutations
+    - Inversion
+    - Sign of a permutation
+  - Theorems (proof required)
+    - Every permutation can be written as a product of transpositions
+    - Any two transposition decompositions of a permutation have the same parity
+    - A permutation is even if and only if it has an even number of inversions
+    - If a permutation of a set of size $n$ is written as a product of $c$ disjoint cycles (including fixed points), then its sign is $(-1)^{n - c}$
+
+### Combinatorics
+
+- **Binomial Coefficients**
+  - Pascal's Triangle
+- **Counting Multisets**
+- **Inclusion-Exclusion**
+- **Recurrence Relations**
+
+### Graph Theory (done)
 
 - **Basic Graph Structure**
+
   - Definitions
     - Graph (simple), Vertex set, Edge set
     - Adjacent vertices, Vertex degree, Isolated vertex
@@ -85,6 +163,7 @@ todo add information about the exam scope
     - The sum of vertex degrees in a graph is twice the number of edges
 
 - **Cliques and Independent Sets**
+
   - Definitions
     - Complement graph
     - Clique, Maximum clique, Maximal clique, Clique number
@@ -94,6 +173,7 @@ todo add information about the exam scope
     - Every graph on 6 vertices contains either a clique of size 3 or an independent set of size 3
 
 - **Walks, Paths, and Connectivity**
+
   - Definitions
     - Walk, Walk concatenation
     - Path (simple path; no repeated vertices), Path graph, Distance
@@ -105,6 +185,7 @@ todo add information about the exam scope
     - If a cut edge is removed from a connected graph, the graph has exactly two connected components
 
 - **Cycles and Trees**
+
   - Definitions
     - Cycle, Acyclic graph
     - Tree, Leaf
@@ -120,6 +201,7 @@ todo add information about the exam scope
     - Removing a leaf and its incident edge from a tree yields a tree
 
 - **Eulerian Graphs**
+
   - Definitions
     - Eulerian trail, Eulerian tour (circuit), Eulerian graph
   - Theorems (proof required)
@@ -140,12 +222,13 @@ todo add information about the exam scope
     - A graph is bipartite if and only if it is $2$-colorable
     - A graph is bipartite if and only if it contains no cycles of odd length
 
-## Number Theory
+## Number Theory (needs work)
 
 This section covers elementary properties of the integers, divisibility, and modular arithmetic.
 
 - Definitions
-  - Divisibility; divisor; multiple
+
+  - Divisibility; divisor; multiple, div and mod operations
   - Prime and composite integers
   - Greatest common divisor (gcd)
   - Relatively prime integers
@@ -154,19 +237,20 @@ This section covers elementary properties of the integers, divisibility, and mod
   - Multiplicative inverse modulo $n$ (when it exists)
 
 - Theorems (Proof Required)
-  - Division Algorithm
-    - For integers $a$ and $b>0$, there exist unique integers
-      $q,r$ such that $a = q\,b + r$ with $0 \le r < b$.
 
-  - Euclidean Algorithm
-    - The Euclidean Algorithm correctly computes $\gcd(a,b)$
-      for integers $a$ and $b$, and terminates.
+  - Division Algorithm: For integers $a$ and $b>0$, there exist unique integers
+    $q,r$ such that $a = q\,b + r$ with $0 \le r < b$.
 
-  - Bézout’s Identity
-    - For integers $a$ and $b$, there exist integers $x,y$ such that
-      $ax + by = \gcd(a,b)$.
+  - Euclidean Algorithm: It correctly computes $\gcd(a,b)$
+    for integers $a$ and $b$, and terminates in at most $2\log_2(b)$ iterations.
+
+  - Bézout’s Identity: For integers $a$ and $b$, there exist integers $x,y$ such that
+    $ax + by = \gcd(a,b)$.
+
+  - Congruence modulo $n$ is an equivalence relation on the integers.
 
 - Theorems (Statement and Use Required; Proof Not Required)
+
   - Fundamental Theorem of Arithmetic
   - Properties of Congruences (compatibility with addition and multiplication)
   - Solvability of Linear Congruences $ax \equiv b \ (\mathrm{mod}\ n)$
@@ -175,9 +259,10 @@ This section covers elementary properties of the integers, divisibility, and mod
   - Chinese Remainder Theorem
   - Applications of modular arithmetic to divisibility tests and elementary counting arguments
 
-### Probability
+### Probability (done)
 
 - **Foundations**
+
   - Definitions
     - Sample space, event
     - Union, intersection, complement
@@ -192,6 +277,7 @@ This section covers elementary properties of the integers, divisibility, and mod
     - Bayes’ Theorem
 
 - **Random Variables and Expectation**
+
   - Definitions
     - Random variable, expected value
     - Independent random variables
