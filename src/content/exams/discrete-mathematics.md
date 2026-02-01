@@ -73,37 +73,64 @@ todo add information about the exam scope
 
 - TODO somewhere: quantifiers
 
-### Structures
+### Foundational Structures
 
 - **Sets**
 
   - Definitions
-    - Set, Subset, Union, Intersection, Power Set, Disjoint
-    - Set Difference $A \setminus B$, Symmetric Difference $A \triangle B$, Cartesian Product $A \times B$
+    - Set, subset, equality of sets
+    - Union, intersection, set difference $A \setminus B$, symmetric difference $A \triangle B$
+    - Disjoint sets
+    - Power set
+    - Cartesian product $A \times B$
   - Skills
-    - Understand how to construct sets using set builder notation
-    - Know how to prove set equality, and that one set is a subset of another
+    - Construct sets using set-builder notation
+    - Prove set equality and subset relationships from definitions
   - Theorems (proof required)
     - The size of the power set of a set with $n$ elements is $2^n$
-    - Let $A$ and $B$ be sets. Then $|A| + |B| = |A \cup B| + |A \cap B|$
-    - Let $A$ and $B$ be sets. Then $A \triangle B = (A \cup B) \setminus (A \cap B)$
-    - DeMorgan's laws
-      - $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$ and $A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C)$
+    - Inclusion–Exclusion Principle (Two Sets):
+      Let $A$ and $B$ be finite sets. Then
+      $|A| + |B| = |A \cup B| + |A \cap B|$
+    - Let $A$ and $B$ be sets. Then  
+      $A \triangle B = (A \cup B) \setminus (A \cap B)$
+    - De Morgan’s laws:
       - $(A \cup B)^c = A^c \cap B^c$ and $(A \cap B)^c = A^c \cup B^c$
-    - Let $A$ and $B$ be finite sets. Then $|A \times B| = |A| \times |B|$
+    - Let $A$ and $B$ be finite sets. Then $|A \times B| = |A| \cdot |B|$
 
 - **Relations**
 
   - Definitions
     - Relation, inverse relation
     - Relation properties: reflexive, irreflexive, symmetric, antisymmetric, transitive
+  - Theorems (proof required)
+
+    - For any relation $R$, $(R^{-1})^{-1} = R$
+
+- **Equivalence Relations**
+
+  - Definitions
     - Equivalence relation, equivalence class
     - Partition
-    - Partial order, total order
   - Theorems (proof required)
-    - The inverse of the inverse of a relation is the relation itself
     - An equivalence relation on a set defines a partition of the set
     - A partition of a set defines an equivalence relation
+
+- **Partially Ordered Sets**
+
+  - Definitions
+    - Partially ordered set (poset), total order (linear order)
+    - Comparable elements
+    - Minimal and maximal elements
+    - Least (minimum) and greatest (maximum) elements
+  - Theorems (proof required)
+    - Every finite poset has at least one minimal element and at least one maximal element
+    - A least element of a poset, if it exists, is unique
+    - A greatest element of a poset, if it exists, is unique
+    - There exists a poset with a minimal element that is not a least element
+    - Every finite totally ordered set with $n$ elements can be labeled with the numbers
+      $1,2,\dots,n$ in such a way that the order agrees with the usual order on the integers
+  - Example
+    - The subset relation defines a partial order on the power set of a set
 
 - **Functions**
 
