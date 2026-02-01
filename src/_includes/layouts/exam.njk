@@ -2,14 +2,7 @@
 <html lang="{{ lang or 'en' }}">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17841359912"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'AW-17841359912');
-    </script>
+    {% include "shortcodes/googleTag.njk" %}
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -52,20 +45,7 @@
         </div>
     </div>
 
-    {# Tawk embed: set `tawkEnabled: false` in front matter (or global data) to disable #}
-    {% if tawkEnabled is not defined or tawkEnabled %}
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function () {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = "https://embed.tawk.to/6972cd7923ac1a197c06cdfa/1jfk758gp";
-            s1.charset = "UTF-8";
-            s1.setAttribute("crossorigin", "*");
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
-    {% endif %}
+    {% include "shortcodes/tawk.njk" %}
 </body>
 
 </html>

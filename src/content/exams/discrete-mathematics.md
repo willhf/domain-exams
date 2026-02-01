@@ -7,7 +7,7 @@ permalink: /exams/discrete-mathematics/
 
 # Discrete Mathematics
 
-Help determine initial exam dates and locations. CTA here
+[Register Exam Interest](/#register-interest)
 
 <section>
 
@@ -53,25 +53,31 @@ willingness to engage with abstract, proof-based reasoning.
 
 ## Exam Scope
 
-todo add information about the exam scope
+Unless otherwise stated, theorems must be proved from definitions and previously
+established results. Proofs may be direct, by contrapositive, by contradiction,
+or by induction, as appropriate.
 
-<p class="note">The scope described here is subject to refinement.</p>
+### Logic and Quantification
 
-### Propositional Logic
+- **Definitions**
 
-- Boolean algebra, proof by truth table
-- Connective operations: conjunction, disjunction, negation, implication, equivalence
-- Definitions of logical equivalence, tautology, contradiction, converse, inverse, contrapositive
-- Algebraic properties: identity, commutative, associative, distributive, De Morgan's laws
-- You should be able to:
-  - Define terms above
-  - Prove logical equivalences using algebraic properties and truth tables
+  - Proposition
+  - Predicate (open sentence over a specified domain)
+  - Logical connectives: negation, conjunction, disjunction, implication, equivalence
+  - Universal and existential quantifiers
+  - Logical equivalence
+  - Tautology and contradiction
+  - Converse, inverse, contrapositive
 
-### Proof Techniques
-
-- Direct, indirect, contrapoitive, contradiction
-
-- TODO somewhere: quantifiers
+- **Theorems (proof required)**
+  - Two propositions are logically equivalent if and only if they have the same truth table
+  - Implication is logically equivalent to a disjunction:
+    $P \to Q \equiv \neg P \lor Q$
+  - De Morgan’s laws for propositions
+  - A conditional statement is logically equivalent to its contrapositive
+  - Negation of quantified predicates:
+    - The negation of “for all $x$, $P(x)$” is “there exists $x$ such that $\neg P(x)$”
+    - The negation of “there exists $x$ such that $P(x)$” is “for all $x$, $\neg P(x)$”
 
 ### Foundational Structures
 
@@ -168,20 +174,76 @@ todo add information about the exam scope
     - A permutation is even if and only if it has an even number of inversions
     - If a permutation of a set of size $n$ is written as a product of $c$ disjoint cycles (including fixed points), then its sign is $(-1)^{n - c}$
 
-### Combinatorics
+### Counting
 
-- **Binomial Coefficients**
-  - Pascal's Triangle
+- **Counting Subsets**
+
+  - Definitions
+    - Binomial coefficient $\binom{n}{k}$ (notation)
+  - Theorems (proof required)
+    - The number of $k$-element subsets of an $n$-element set is $\binom{n}{k}$
+    - Pascal’s Identity: $\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$
+    - Formula for $\binom{n}{k}$
+
 - **Counting Multisets**
-- **Inclusion-Exclusion**
-- **Recurrence Relations**
 
-### Graph Theory (done)
+  - Definitions
+    - Multiset
+    - Notation for the number of multisets of size $k$ chosen from an $n$-element set
+      (sometimes written $n$ multichoose $k$)
+  - Theorems (proof required)
+    - The number of multisets of size $k$ chosen from an $n$-element set is
+      $\binom{n + k - 1}{k}$
+
+- **Inclusion-Exclusion**
+
+  - Definitions
+    - Overcounting and correction
+  - Theorems (proof required)
+    - Inclusion–Exclusion Principle (Two Sets)
+    - Inclusion–Exclusion Principle (Three Sets)
+
+### Probability
+
+- **Foundations**
+
+  - Definitions
+    - Sample space, event
+    - Union, intersection, complement
+    - Conditional probability, independent events
+    - Finite probability model
+  - Axioms
+    - Kolmogorov axioms
+  - Theorems (proof required)
+    - Complement rule: $P(A^c) = 1 - P(A)$
+    - Inclusion–Exclusion Principle (Two Events)
+    - Law of Total Probability (finite case)
+    - Bayes’ Theorem
+
+- **Random Variables and Expectation**
+
+  - Definitions
+    - Random variable, expected value
+    - Independent random variables
+    - Indicator random variables
+  - Theorems (proof required)
+    - $E[\mathbf{1}_A] = P(A)$
+    - Linearity of expectation: $E[X + Y] = E[X] + E[Y]$
+    - If $X$ and $Y$ are independent random variables, then $E[XY] = E[X]E[Y]$
+
+- **Variance**
+  - Definitions
+    - Variance
+  - Theorems (proof required)
+    - Let $X$ be a real-valued random variable. Then $\text{Var}(X) = E[X^2] - E[X]^2$
+    - Let $a, b \in \mathbb{R}$. Then $\text{Var}(aX + b) = a^2 \text{Var}(X)$
+
+### Graph Theory
 
 - **Basic Graph Structure**
 
   - Definitions
-    - Graph (simple), Vertex set, Edge set
+    - Graph (simple, undirected), Vertex set, Edge set
     - Adjacent vertices, Vertex degree, Isolated vertex
     - Order, Size, Maximum degree, Minimum degree
     - Complete graph
@@ -249,7 +311,7 @@ todo add information about the exam scope
     - A graph is bipartite if and only if it is $2$-colorable
     - A graph is bipartite if and only if it contains no cycles of odd length
 
-## Number Theory (needs work)
+### Number Theory
 
 This section covers elementary properties of the integers, divisibility, and modular arithmetic.
 
@@ -286,56 +348,57 @@ This section covers elementary properties of the integers, divisibility, and mod
   - Chinese Remainder Theorem
   - Applications of modular arithmetic to divisibility tests and elementary counting arguments
 
-### Probability (done)
-
-- **Foundations**
-
-  - Definitions
-    - Sample space, event
-    - Union, intersection, complement
-    - Conditional probability, independent events
-    - Finite probability model
-  - Axioms
-    - Kolmogorov axioms
-  - Theorems (proof required)
-    - Complement rule: $P(A^c) = 1 - P(A)$
-    - Inclusion–Exclusion Principle (Two Events)
-    - Law of Total Probability (finite case)
-    - Bayes’ Theorem
-
-- **Random Variables and Expectation**
-
-  - Definitions
-    - Random variable, expected value
-    - Independent random variables
-    - Indicator random variables
-  - Theorems (proof required)
-    - $E[\mathbf{1}_A] = P(A)$
-    - Linearity of expectation: $E[X + Y] = E[X] + E[Y]$
-    - If $X$ and $Y$ are independent random variables, then $E[XY] = E[X]E[Y]$
-
-- **Variance**
-  - Definitions
-    - Variance
-  - Theorems (proof required)
-    - Let $X$ be a real-valued random variable. Then $\text{Var}(X) = E[X^2] - E[X]^2$
-    - Let $a, b \in \mathbb{R}$. Then $\text{Var}(aX + b) = a^2 \text{Var}(X)$
-
 </section>
 
 <section>
 
 ## Out of Scope
 
-The following topics are not covered in the exam. This section is provided
-to clarify boundaries and help candidates focus their preparation.
+The following topics and modes of reasoning are not covered in this exam.  
+This list is intended to clarify boundaries and help candidates focus their preparation.
 
-- Abstract Algebra
-- Cryptography
-- Asymptotic Analysis (covered in [Algorithms & Data Structures](/exams/algorithms))
-- Digital Circuits
-- Planar Graphs
-- Automata Theory, Formal Languages, and Regular Expressions
+- **Algorithmic and complexity-focused topics**
+
+  - Asymptotic analysis (Big-O, Big-Ω, Big-Θ)
+  - Recurrence relations and methods for solving them
+  - Dynamic programming
+  - Algorithmic graph problems (e.g. shortest paths, spanning tree algorithms, flows, matchings)
+  - These topics are covered in the [Algorithms & Data Structures](/exams/algorithms) exam.
+
+- **Logic beyond the stated scope**
+
+  - Predicate logic as a formal system
+  - Inference rules and proof systems (e.g. natural deduction, sequent calculus)
+  - Normal forms (CNF, DNF), satisfiability, or resolution
+  - Model theory or formal semantics
+
+- **Algebra beyond elementary discrete structures**
+
+  - Groups, rings, and fields
+  - Homomorphisms and group actions
+  - Linear algebra
+  - Abstract Boolean algebras
+
+- **Graph theory beyond the listed topics**
+
+  - Directed graphs
+  - Planar graphs and planarity theorems
+  - Graph isomorphism
+  - Network flow, matching theory, or spectral/algebraic graph theory
+
+- **Probability and statistics beyond finite models**
+
+  - Continuous probability spaces
+  - Probability distributions as statistical models
+  - Random processes or stochastic models
+  - Statistical inference or hypothesis testing
+
+- **Additional excluded areas**
+  - Cryptography
+  - Automata theory, formal languages, and regular expressions
+  - Digital logic or circuit design
+  - Generating functions
+  - Advanced number theory beyond the stated scope
 
 </section>
 

@@ -7,7 +7,7 @@ permalink: /exams/algorithms/
 
 # Algorithms &amp; Data Structures
 
-Help determine initial exam dates and locations. CTA here
+[Register Exam Interest](/#register-interest)
 
 <section>
 
