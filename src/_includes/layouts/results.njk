@@ -1,0 +1,247 @@
+---
+layout: layouts/base.njk
+chrome: minimal
+noindex: true
+---
+
+{# Layout: Results page Parent: layouts/base.njk (via front matter above) Expects front matter in
+the content file: result.test_taker_name result.exam_name result.exam_slug result.outcome
+result.issued_on result.result_id #}
+
+<style>
+  .result-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .result-card {
+    position: relative;
+    border: 1px solid var(--hairline, rgba(0, 0, 0, 0.12));
+    border-radius: 14px;
+    background: var(--surface, rgba(255, 255, 255, 0.6));
+    padding: clamp(18px, 3vw, 28px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* optional, subtle */
+  }
+
+  .result-card::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid var(--hairline, rgba(0, 0, 0, 0.1));
+    border-radius: 10px;
+    pointer-events: none;
+  }
+
+  .result-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .result-kicker {
+    margin: 0;
+    font-size: 0.92rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+
+  .result-title {
+    margin: 6px 0 0 0;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+
+  .result-seal {
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    border: 1px solid var(--hairline, rgba(0, 0, 0, 0.12));
+    background: transparent;
+    display: grid;
+    place-items: center;
+  }
+
+  .result-seal img {
+    width: 36px;
+    height: 36px;
+    opacity: 0.85;
+  }
+
+  .result-section {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--hairline, rgba(0, 0, 0, 0.08));
+    margin: 0px 0;
+  }
+
+  /* Summary */
+  .result-summary {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.45;
+    opacity: 0.92;
+  }
+
+  /* Details (definition-list style) */
+  .result-dl {
+    margin: 10px 0 0 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .result-dl-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 12px;
+    align-items: baseline;
+  }
+
+  .result-dt {
+    font-size: 0.92rem;
+    opacity: 0.68;
+  }
+
+  .result-dd {
+    margin: 0;
+  }
+
+  @media (max-width: 520px) {
+    .result-dl-row {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
+
+  /* Actions */
+  .result-actions {
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+  }
+
+  .result-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--hairline, rgba(0, 0, 0, 0.14));
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  .result-actions a:hover {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.22);
+  }
+
+  .result-actions a.primary {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.22);
+  }
+
+  /* Footer */
+  .result-footer {
+    margin-top: 18px;
+    padding-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .result-meta {
+    margin: 0;
+    font-size: 0.92rem;
+    opacity: 0.68;
+  }
+</style>
+{% set r = result or {} %} {% set name = r.test_taker_name or "Test taker" %} {% set examName =
+r.exam_name or "Exam" %} {% set examSlug = r.exam_slug or "" %} {% set outcome = (r.outcome or
+"result") | lower %} {% set issuedOn = r.issued_on or "" %} {% set resultId = r.result_id or "" %}
+{# Compute scopeUrl WITHOUT ternary operator (Nunjucks doesn't support ?:) #} {% set scopeUrl =
+"/exams/" %} {% if examSlug %} {% set scopeUrl = "/exams/" ~ examSlug ~ "/" %} {% endif %} {#
+Outcome label mapping (simple + robust) #} {% set outcomeLabel = outcome %} {% if outcome ==
+"mastery" %} {% set outcomeLabel = "Mastery" %} {% elif outcome == "proficient" %} {% set
+outcomeLabel = "Proficient" %} {% elif outcome == "pass" %} {% set outcomeLabel = "Pass" %} {% elif
+outcome == "fail" %} {% set outcomeLabel = "Fail" %} {% else %} {# Fallback: "some-outcome" -> "Some
+outcome" #} {% set outcomeLabel = (outcome | replace("-", " ") | capitalize) %} {% endif %}
+
+<div class="result-wrap">
+  <div class="result-card">
+    <div class="result-header">
+      <div>
+        <p class="result-kicker">Domain Exams · Official Result</p>
+        <h1 style="font-size: 4rem; font-weight: 650; margin: 10px 0px">{{ name | escape }}</h1>
+      </div>
+
+      <div class="result-seal" aria-hidden="true" title="Domain Exams">
+        <img src="/assets/discrete-mathematics.svg" alt="" width="36" height="36" />
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="display: grid; grid-template-columns: 4fr 2fr; gap: 24px">
+      <div>
+        <p>Exam</p>
+        <p style="font-size: 2.2rem; font-weight: 650; margin: 0">{{ examName | escape }}</p>
+        <div>
+          {{ content | safe }}
+        </div>
+      </div>
+
+      <div>
+        <p>Result</p>
+        <p
+          style="
+            display: inline-flex;
+            align-items: center;
+
+            padding: 10px 22px;
+            border-radius: 999px;
+
+            border: 1px solid rgba(0, 0, 0, 0.14);
+            background: rgba(214, 190, 231, 0.42);
+
+            font-weight: 750;
+            font-size: 1.35rem;
+            letter-spacing: 0.01em;
+            line-height: 1;
+
+            margin: 6px 0 12px 0;
+            width: fit-content;
+          "
+        >
+          {{ outcomeLabel | escape }}
+        </p>
+        <p>This result indicates comprehensive and reliable command of the subject matter.</p>
+        <p>Test taken on {{ issuedOn | escape }}</p>
+        <p>Result ID: {{ resultId | escape }}</p>
+        {# TODO: qr code here that links to the result page #}
+      </div>
+    </div>
+
+    <div class="result-section">
+      <div class="result-actions">
+        <a href="{{ scopeUrl }}">Full Exam Scope</a>
+        <a href="/">Domain Exams Home</a>
+      </div>
+    </div>
+
+    <div class="result-footer">
+      <p class="result-meta">Domain Exams</p>
+      <p class="result-meta">Not indexed · Shareable link</p>
+    </div>
+  </div>
+</div>

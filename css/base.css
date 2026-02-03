@@ -93,11 +93,6 @@ section {
     font-weight: 600;
 }
 
-.cta-note {
-    font-weight: 400;
-    color: #444;
-}
-
 /* =========================
    Form
    ========================= */
@@ -349,21 +344,6 @@ legend {
 /* .breadcrumbs .current {
     color: #222;
 } */
-
-.breadcrumb-icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 8px;
-    line-height: 1;
-}
-
-.breadcrumb-icon svg {
-    width: 48px;
-    height: 48px;
-    vertical-align: middle;
-    display: inline-block;
-    opacity: 1;
-}
 
 /* Preserve KaTeX spacing semantics */
 .katex,
