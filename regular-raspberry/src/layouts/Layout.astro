@@ -1,0 +1,161 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props as Props;
+const pageTitle = title ? `${title} · Domain Exams` : "Domain Exams";
+const metaDescription =
+  description ||
+  "Domain Exams — independent, proof-based examinations assessing mastery of undergraduate subject material.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{pageTitle}</title>
+    {description && <meta name="description" content={metaDescription} />}
+
+    <!-- Open Graph / Twitter -->
+    {
+      title && (
+        <>
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={metaDescription} />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={`https://domainexams.com${Astro.url.pathname}`} />
+          <meta name="twitter:card" content="summary" />
+        </>
+      )
+    }
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  </head>
+
+  <body class="landing-page">
+    <div class="page">
+      <div class="wrap">
+        <slot name="breadcrumbs" />
+        <slot />
+        <footer class="mt-10">
+          <p>
+            Contact: <a href="mailto:hello@domainexams.com">hello@domainexams.com</a>
+          </p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    background: var(--bg);
+  }
+
+  /* =========================
+   Layout
+   ========================= */
+
+  .page {
+    --maxw: 760px;
+    position: relative;
+    min-height: 100vh;
+    background: var(--bg);
+    overflow-x: clip;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 56px 20px 72px;
+  }
+
+  /* =========================
+   Sidebar margin images
+   ========================= */
+
+  .page::before,
+  .page::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: min(44vw, 560px);
+    pointer-events: none;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: 170%;
+    opacity: 0.12;
+    filter: none;
+    transform-origin: center;
+  }
+
+  /* Left: anchor near the top */
+  .landing-page .page::before {
+    left: 0;
+    background-image: url("/assets/margins/galois.1.png");
+    background-position: 50% 6%;
+    transform: rotate(-2deg) translateX(-10px);
+
+    -webkit-mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.85) 55%,
+      rgba(0, 0, 0, 0.35) 70%,
+      rgba(0, 0, 0, 0) 82%
+    );
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.85) 55%,
+      rgba(0, 0, 0, 0.35) 70%,
+      rgba(0, 0, 0, 0) 82%
+    );
+  }
+
+  /* Right: anchor around the middle */
+  .landing-page .page::after {
+    right: 0;
+    background-image: url("/assets/margins/galois.2.png");
+    background-position: 50% 35%;
+    transform: rotate(2deg) translateX(10px);
+
+    -webkit-mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.85) 55%,
+      rgba(0, 0, 0, 0.35) 70%,
+      rgba(0, 0, 0, 0) 82%
+    );
+    mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.85) 55%,
+      rgba(0, 0, 0, 0.35) 70%,
+      rgba(0, 0, 0, 0) 82%
+    );
+  }
+
+  @media (max-width: 1600px) {
+    .page::before,
+    .page::after {
+      width: min(34vw, 460px);
+    }
+  }
+
+  @media (max-width: 1350px) {
+    .page::before,
+    .page::after {
+      display: none;
+    }
+  }
+</style>

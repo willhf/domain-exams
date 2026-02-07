@@ -1,0 +1,6 @@
+- Logic & quantification: propositions/predicates, equivalence, implication, quantified negation.
+- Core structures: sets, relations (equivalence relations & partitions), posets, functions, permutations.
+- Counting: binomial coefficients, multisets, inclusion–exclusion.
+- Probability: conditional probability & independence, Bayes/total probability, expectation and variance.
+- Graph theory: connectivity, trees, Eulerian graphs, coloring and bipartiteness.
+- Number theory: gcd/Euclidean algorithm, Bézout, congruences, linear congruences, Chinese Remainder Theorem.

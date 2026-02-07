@@ -1,0 +1,123 @@
+---
+import Layout from "../layouts/Layout.astro";
+import RegisterInterestForm from "../components/RegisterInterestForm.astro";
+---
+
+<Layout>
+  <header>
+    <h1>Domain Exams</h1>
+    <p><strong>Written, proof-based exams for serious self-study in math and CS.</strong></p>
+    <p><a href="#register-interest">Register Exam Interest</a></p>
+  </header>
+
+  <section>
+    <h2>The Vision</h2>
+    <blockquote class="vision-quote">
+      <p>
+        “Free education is abundant, all over the Internet. It’s the desire to learn that’s scarce.”
+      </p>
+      <footer>— Naval Ravikant</footer>
+    </blockquote>
+    <p>
+      Textbooks are cheap, courses are everywhere, and AI tutors are free. Access to knowledge is no
+      longer the bottleneck. Validation is. There is no widely recognized way to demonstrate mastery
+      of a subject—no matter how seriously it was studied. Domain Exams fills that gap by providing
+      a durable, credible mark of achievement.
+    </p>
+  </section>
+
+  <section>
+    <h2>What Domain Exams Are</h2>
+    <p>
+      Domain Exams are written examinations that assess mastery of undergraduate-level material in
+      mathematics and theoretical computer science. They emphasize correct reasoning and proof-based
+      justification, with clearly defined scope and standards.
+    </p>
+    <ul>
+      <li><strong>Written and proof-based</strong> — not multiple choice.</li>
+      <li><strong>Standards, not ranking</strong> — results reflect absolute performance.</li>
+      <li><strong>Depth over breadth</strong> — each exam is narrow but rigorous.</li>
+      <li><strong>Reasoning-first</strong> — understanding over memorization.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Exams</h2>
+    <style>
+      .exam-icon {
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        margin-right: 0.5em;
+        display: inline-block;
+      }
+    </style>
+    <h3>
+      <a href="/exams/discrete-mathematics">
+        <img src="/assets/discrete-mathematics.svg" alt="" class="exam-icon" />
+        Discrete Mathematics
+      </a>
+    </h3>
+    <h3>
+      <a href="/exams/algorithms">
+        <img src="/assets/algorithms.svg" alt="" class="exam-icon" />
+        Algorithms and Data Structures
+      </a>
+    </h3>
+    <p>
+      Additional exams are in development. <a href="#register-interest">Register interest</a> in the subject
+      of your choice.
+    </p>
+  </section>
+
+  <section>
+    <h2>Why Participate</h2>
+    <ul>
+      <li>Demonstrate honors-level undergraduate understanding.</li>
+      <li>Turn self-study into a clear, external objective.</li>
+      <li>Earn an independent, durable signal of mastery.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What You Receive</h2>
+    <ul>
+      <li>
+        A result of
+        <strong>Mastery</strong>,
+        <strong>Proficiency</strong>,
+        <strong>Partial</strong>, or
+        <strong>Insufficient</strong>.
+      </li>
+      <li>
+        A printed certificate for outcomes of <strong>Mastery</strong> or <strong>
+          Proficiency
+        </strong>.
+      </li>
+      <li>A shareable result page under an unguessable URL (not indexed).</li>
+    </ul>
+  </section>
+
+  <section id="register-interest">
+    <h2>Register Interest</h2>
+    <p>Email and subject selection are required; all other fields are optional.</p>
+    <RegisterInterestForm />
+  </section>
+</Layout>
+
+<style>
+  .vision-quote {
+    margin: 14px 0;
+    padding-left: 14px;
+    border-left: 2px solid var(--hairline);
+    max-width: var(--text-width);
+  }
+
+  .vision-quote p {
+    margin: 0;
+  }
+
+  .vision-quote footer {
+    margin-top: 0px;
+  }
+</style>

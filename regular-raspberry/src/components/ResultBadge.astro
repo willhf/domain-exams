@@ -1,0 +1,35 @@
+---
+type Result = "mastery" | "proficiency" | "partial" | "insufficient";
+
+interface Props {
+  Result: Result;
+}
+
+const colorClasses: Record<Result, string> = {
+  mastery: "bg-purple-200 text-purple-950",
+  proficiency: "bg-blue-200 text-blue-950",
+  partial: "bg-amber-200 text-amber-950",
+  insufficient: "bg-rose-200 text-rose-950"
+};
+
+const labelMap: Record<Result, string> = {
+  mastery: "Mastery",
+  proficiency: "Proficient",
+  partial: "Partial",
+  insufficient: "Insufficient"
+};
+
+const { Result } = Astro.props;
+
+const classes = colorClasses[Result];
+
+const label = labelMap[Result];
+---
+
+<span
+  class={`inline-flex items-center rounded-lg px-6 py-4
+          text-3xl font-bold leading-none tracking-wide
+          ${classes}`}
+>
+  {label}
+</span>

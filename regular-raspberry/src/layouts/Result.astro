@@ -1,0 +1,154 @@
+---
+import Layout from "./Layout.astro";
+import ResultBadge from "../components/ResultBadge.astro";
+import QRCode from "qrcode";
+
+type Frontmatter = {
+  CandidateName: string;
+  Result: "mastery" | "proficiency" | "partial" | "insufficient";
+  ExamHandle: "algorithms" | "discrete-mathematics";
+  IssuedOn?: string;
+  ResultId?: string;
+};
+
+const {
+  CandidateName,
+  ExamHandle,
+  Result: resultValue,
+  IssuedOn,
+  ResultId
+} = Astro.props.frontmatter as Frontmatter;
+
+// Map exam handle to display name
+const examNameMap: Record<string, string> = {
+  algorithms: "Algorithms",
+  "discrete-mathematics": "Discrete Mathematics"
+};
+
+const examDisplayName = examNameMap[ExamHandle] || ExamHandle;
+
+const resultId =
+  ResultId || Astro.url.pathname.split("/").filter(Boolean).pop()?.toUpperCase() || "";
+
+const issuedDate = IssuedOn || new Date().toISOString().split("T")[0];
+const formattedDate = new Date(issuedDate).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit"
+});
+
+const scopeSummaryGlob = import.meta.glob("../content/*-scope-summary.md", {
+  eager: true
+});
+const scopeSummaryKey = Object.keys(scopeSummaryGlob).find((k) =>
+  k.includes(`${ExamHandle}-scope-summary.md`)
+);
+const ScopeSummary = scopeSummaryKey ? (scopeSummaryGlob[scopeSummaryKey] as any).default : null;
+
+const thisPageURL = `https://domainexams.com/results/${resultId}`;
+
+const qrSvg = await QRCode.toString(thisPageURL, {
+  type: "svg",
+  margin: 1,
+  width: 160,
+  color: { light: "#ffffff00" }
+});
+---
+
+<Layout
+  title={`${CandidateName} · ${examDisplayName}`}
+  description={`${CandidateName} has achieved ${resultValue} in ${ExamHandle}`}
+>
+  <div class="mx-auto max-w-5xl">
+    <div class="relative rounded-2xl md:p-6 shadow-lg bg-purple-200">
+      {/* inner hairline */}
+      <div class="pointer-events-none absolute inset-2.5 rounded-lg bg-purple-50"></div>
+
+      <div class="relative p-3">
+        <div class="flex items-start justify-between gap-4 border-b border-black/10">
+          <div>
+            <p class="m-0 text-sm uppercase tracking-wider text-black/70">
+              Domain Exams · Official Result
+            </p>
+            <h1 class="my-3 text-6xl font-semibold">
+              {CandidateName}
+            </h1>
+          </div>
+
+          <div
+            class="grid h-15 w-15 shrink-0 place-items-center rounded-full bg-purple-300"
+            aria-hidden="true"
+          >
+            <img
+              src={`/assets/${ExamHandle}.svg`}
+              alt=""
+              width="36"
+              height="36"
+              class="h-9 w-9 opacity-85"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-x-6 gap-y-4 pt-6 md:grid-cols-[2fr_1fr]">
+          {/* Row 1, Col 1: Exam */}
+          <div>
+            <p class="mb-2 text-m text-black/70">Exam</p>
+            <p class="m-0 text-4xl font-semibold leading-tight tracking-tight">
+              {examDisplayName}
+            </p>
+          </div>
+
+          {/* Row 1, Col 2: Result */}
+          <div>
+            <p class="mb-2 text-m text-black/70">Result</p>
+            <p class="m-0 text-4xl font-semibold leading-tight tracking-tight">Mastery</p>
+          </div>
+
+          {/* Row 2, Col 1: Scope summary — aligns with Test Date / Result ID */}
+          <div>
+            <p class="mb-2 text-m text-black/70">Scope Summary</p>
+            {
+              ScopeSummary && (
+                <div class="scope-summary text-m leading-relaxed text-black/80">
+                  {/* @ts-ignore - dynamic component from glob */}
+                  <ScopeSummary />
+                </div>
+              )
+            }
+          </div>
+
+          {/* Row 2, Col 2: Test Date and Result ID */}
+          <div>
+            <p class="mb-2 text-m text-black/70">Details</p>
+
+            <div class="flex items-baseline gap-2">
+              Test Date:
+              <span class="font-mono">{formattedDate}</span>
+            </div>
+
+            <div class="flex items-baseline gap-2">
+              Result ID:
+              <span class="font-mono">{resultId}</span>
+            </div>
+
+            <div class="qr-wrap my-4" set:html={qrSvg} />
+          </div>
+        </div>
+        <div class="mt-5 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-4">
+          <p class="m-0 ml-auto text-sm text-black/60">Not Indexed · Shareable Link</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .scope-summary :global(ul) {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+  }
+  .scope-summary :global(li) {
+    line-height: 1.625;
+  }
+</style>
